@@ -30,11 +30,11 @@ go here for details of the API:
 ```
 
 Now for the Haskell client.
-You'll need [Nix](https://nixos.org) of course.
+You'll need [Nix](https://nixos.org).
 
 If possible, also [add the IOHK binary
 cache](https://input-output-hk.github.io/haskell.nix/tutorials/getting-started/#setting-up-the-binary-cache)
-to avoid building lots of extra Haskell packages on your own machine.
+to avoid building lots of extra packages on your own machine.
 Then you can run `cabal` commands inside `nix-shell` like so:
 
 ```
