@@ -16,7 +16,7 @@ let
 in pkgs.haskell-nix.project {
   # 'cleanGit' cleans a source directory based on the files known by git
   src = pkgs.haskell-nix.haskellLib.cleanGit {
-    name = "electionguard-client-nix";
+    name = "electionguard-client-hs";
     src = ./.;
   };
   # Specify the GHC version to use.

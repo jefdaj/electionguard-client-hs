@@ -6,9 +6,9 @@ cabal-version: 1.12
 
 name:           electionguard-client
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/jefdaj/electionguard-client#readme>
-homepage:       https://github.com/jefdaj/electionguard-client#readme
-bug-reports:    https://github.com/jefdaj/electionguard-client/issues
+description:    Please see the README on GitHub at <https://github.com/jefdaj/electionguard-client-hs#readme>
+homepage:       https://github.com/jefdaj/electionguard-client-hs#readme
+bug-reports:    https://github.com/jefdaj/electionguard-client-hs/issues
 author:         Jeffrey David Johnson
 maintainer:     jefdaj@protonmail.ch
 copyright:      2021 Jeffrey David Johnson

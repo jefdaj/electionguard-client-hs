@@ -1,6 +1,6 @@
 name:                electionguard-client
 version:             0.1.0.0
-github:              "jefdaj/electionguard-client"
+github:              "jefdaj/electionguard-client-hs"
 license:             BSD3
 author:              "Jeffrey David Johnson"
 maintainer:          "jefdaj@protonmail.ch"
@@ -17,7 +17,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/jefdaj/electionguard-client#readme>
+description:         Please see the README on GitHub at <https://github.com/jefdaj/electionguard-client-hs#readme>
 
 dependencies:
 - base >= 4.7 && < 5
