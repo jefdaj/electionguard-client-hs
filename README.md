@@ -4,7 +4,7 @@
 
 A Haskell client for the
 [Web API](https://electionguard-web-api.readthedocs.io/en/latest/) of Microsoft's
-[ElectionGuard](https://github.com/microsoft/electionguard-python), which is written in Python 3.
+[ElectionGuard](https://github.com/microsoft/electionguard-python).
 
 ## Development
 
