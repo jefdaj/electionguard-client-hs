@@ -35,10 +35,19 @@ You'll need [Nix](https://nixos.org).
 If possible, also [add the IOHK binary
 cache](https://input-output-hk.github.io/haskell.nix/tutorials/getting-started/#setting-up-the-binary-cache)
 to avoid building lots of extra packages on your own machine.
-Then you can run `cabal` commands inside `nix-shell` like so:
+Then you can run `cabal` commands inside `nix-shell` like this:
 
 ```
-nix-shell --run 'cabal repl electionguard-client'
-nix-shell --run 'cabal run electionguard-client-exe'
-nix-shell --run 'cabal run electionguard-client-test'
+$ nix-shell
+[nix-shell]$ cabal repl
+[nix-shell]$ cabal run electionguard-client-exe
+[nix-shell]$ cabal run electionguard-client-test
+```
+
+Or like this:
+
+```
+$ nix-shell --run 'cabal repl'
+$ nix-shell --run 'cabal run electionguard-client-exe'
+$ nix-shell --run 'cabal run electionguard-client-test'
 ```
