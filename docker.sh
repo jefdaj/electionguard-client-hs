@@ -18,7 +18,9 @@ ensure-running() {
   else
     echo "$name is already running"
   fi
-  echo "go here for api docs: http://localhost:${port}/docs"
+  echo "go here for details of the API:"
+	echo "  http://localhost:${port}/docs"
+	echo "  http://localhost:${port}/redoc"
 }
 
 ensure-running electionguard-guardian guardian 8001

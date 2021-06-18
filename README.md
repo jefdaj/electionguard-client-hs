@@ -18,12 +18,15 @@ docker.io/electionguard/electionguard-web-api:latest
 
 starting electionguard-guardian...
 e6ebef0e1f58b0614425c9b76e03f60ada33102afa9e6242ecf859d2b0f61a80
-go here for api docs: http://localhost:8001/docs
+go here for details of the API:
+  http://localhost:8001/docs
+  http://localhost:8001/redoc
 
 starting electionguard-mediator...
 07d82f2cbd5075e028e2511ae55886b7e31edf4836cd8e736430b3c2ccc073c7
-go here for api docs: http://localhost:8002/docs
-
+go here for details of the API:
+  http://localhost:8002/docs
+  http://localhost:8002/redoc
 ```
 
 Now for the Haskell client.
