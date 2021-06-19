@@ -1,0 +1,724 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "electionguard-web-api",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/v1/guardian": {
+      "post": {
+        "tags": [
+          "Key Ceremony"
+        ],
+        "summary": "Create Guardian",
+        "description": "Create a guardian for the election process with the associated keys",
+        "operationId": "create_guardian_api_v1_guardian_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuardianRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Guardian"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/guardian/backup": {
+      "post": {
+        "tags": [
+          "Key Ceremony"
+        ],
+        "summary": "Create Guardian Backup",
+        "description": "Generate all election partial key backups based on existing public keys\n:param request: Guardian backup request\n:return: Guardian backup",
+        "operationId": "create_guardian_backup_api_v1_guardian_backup_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuardianBackupRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuardianBackup"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/guardian/backup/verify": {
+      "post": {
+        "tags": [
+          "Key Ceremony"
+        ],
+        "summary": "Verify Backup",
+        "operationId": "verify_backup_api_v1_guardian_backup_verify_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackupVerificationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/guardian/challenge": {
+      "post": {
+        "tags": [
+          "Key Ceremony"
+        ],
+        "summary": "Create Backup Challenge",
+        "operationId": "create_backup_challenge_api_v1_guardian_challenge_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackupChallengeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/guardian/challenge/verify": {
+      "post": {
+        "tags": [
+          "Key Ceremony"
+        ],
+        "summary": "Verify Challenge",
+        "operationId": "verify_challenge_api_v1_guardian_challenge_verify_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChallengeVerificationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/key/election/generate": {
+      "post": {
+        "tags": [
+          "Key Ceremony"
+        ],
+        "summary": "Generate Election Keys",
+        "description": "Generate election key pairs for use in election process\n:param request: Election key pair request\n:return: Election key pair",
+        "operationId": "generate_election_keys_api_v1_key_election_generate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ElectionKeyPairRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ElectionKeyPair"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/key/auxiliary/generate": {
+      "post": {
+        "tags": [
+          "Key Ceremony"
+        ],
+        "summary": "Generate Auxiliary Keys",
+        "description": "Generate auxiliary key pair for auxiliary uses during process\n:return: Auxiliary key pair",
+        "operationId": "generate_auxiliary_keys_api_v1_key_auxiliary_generate_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuxiliaryKeyPair"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ballot/decrypt-shares": {
+      "post": {
+        "tags": [
+          "Tally"
+        ],
+        "summary": "Decrypt Ballot Shares",
+        "description": "Decrypt this guardian's share of one or more ballots",
+        "operationId": "decrypt_ballot_shares_api_v1_ballot_decrypt_shares_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DecryptBallotSharesRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tally/decrypt-share": {
+      "post": {
+        "tags": [
+          "Tally"
+        ],
+        "summary": "Decrypt Share",
+        "description": "Decrypt a single guardian's share of a tally",
+        "operationId": "decrypt_share_api_v1_tally_decrypt_share_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DecryptTallyShareRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ping": {
+      "get": {
+        "tags": [
+          "Utility"
+        ],
+        "summary": "Ping",
+        "description": "Ensure API can be pinged",
+        "operationId": "ping_api_v1_ping_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Ping Api V1 Ping Get",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AuxiliaryKeyPair": {
+        "title": "AuxiliaryKeyPair",
+        "required": [
+          "secret_key",
+          "public_key"
+        ],
+        "type": "object",
+        "properties": {
+          "secret_key": {
+            "title": "Secret Key",
+            "type": "string"
+          },
+          "public_key": {
+            "title": "Public Key",
+            "type": "string"
+          }
+        },
+        "description": "Auxiliary pair of a secret key and public key."
+      },
+      "AuxiliaryPublicKey": {
+        "title": "AuxiliaryPublicKey",
+        "required": [
+          "owner_id",
+          "sequence_order",
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "owner_id": {
+            "title": "Owner Id",
+            "type": "string"
+          },
+          "sequence_order": {
+            "title": "Sequence Order",
+            "type": "integer"
+          },
+          "key": {
+            "title": "Key",
+            "type": "string"
+          }
+        },
+        "description": "Auxiliary public key and owner information"
+      },
+      "BackupChallengeRequest": {
+        "title": "BackupChallengeRequest",
+        "type": "object",
+        "properties": {
+          "election_partial_key_backup": {
+            "title": "Election Partial Key Backup"
+          },
+          "election_polynomial": {
+            "title": "Election Polynomial"
+          }
+        }
+      },
+      "BackupVerificationRequest": {
+        "title": "BackupVerificationRequest",
+        "required": [
+          "verifier_id",
+          "auxiliary_key_pair"
+        ],
+        "type": "object",
+        "properties": {
+          "verifier_id": {
+            "title": "Verifier Id",
+            "type": "string"
+          },
+          "election_partial_key_backup": {
+            "title": "Election Partial Key Backup"
+          },
+          "auxiliary_key_pair": {
+            "$ref": "#/components/schemas/AuxiliaryKeyPair"
+          },
+          "override_rsa": {
+            "title": "Override Rsa",
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "ChallengeVerificationRequest": {
+        "title": "ChallengeVerificationRequest",
+        "required": [
+          "verifier_id"
+        ],
+        "type": "object",
+        "properties": {
+          "verifier_id": {
+            "title": "Verifier Id",
+            "type": "string"
+          },
+          "election_partial_key_challenge": {
+            "title": "Election Partial Key Challenge"
+          }
+        }
+      },
+      "DecryptBallotSharesRequest": {
+        "title": "DecryptBallotSharesRequest",
+        "required": [
+          "encrypted_ballots",
+          "guardian"
+        ],
+        "type": "object",
+        "properties": {
+          "encrypted_ballots": {
+            "title": "Encrypted Ballots",
+            "type": "array",
+            "items": {}
+          },
+          "guardian": {
+            "$ref": "#/components/schemas/Guardian"
+          },
+          "context": {
+            "title": "Context"
+          }
+        }
+      },
+      "DecryptTallyShareRequest": {
+        "title": "DecryptTallyShareRequest",
+        "required": [
+          "guardian"
+        ],
+        "type": "object",
+        "properties": {
+          "encrypted_tally": {
+            "title": "Encrypted Tally"
+          },
+          "guardian": {
+            "$ref": "#/components/schemas/Guardian"
+          },
+          "description": {
+            "title": "Description"
+          },
+          "context": {
+            "title": "Context"
+          }
+        }
+      },
+      "ElectionKeyPair": {
+        "title": "ElectionKeyPair",
+        "required": [
+          "secret_key",
+          "public_key"
+        ],
+        "type": "object",
+        "properties": {
+          "secret_key": {
+            "title": "Secret Key",
+            "type": "string"
+          },
+          "public_key": {
+            "title": "Public Key",
+            "type": "string"
+          },
+          "proof": {
+            "title": "Proof"
+          },
+          "polynomial": {
+            "title": "Polynomial"
+          }
+        },
+        "description": "Election key pair, proof and polynomial"
+      },
+      "ElectionKeyPairRequest": {
+        "title": "ElectionKeyPairRequest",
+        "required": [
+          "quorum"
+        ],
+        "type": "object",
+        "properties": {
+          "quorum": {
+            "title": "Quorum",
+            "type": "integer"
+          },
+          "nonce": {
+            "title": "Nonce",
+            "type": "string"
+          }
+        }
+      },
+      "Guardian": {
+        "title": "Guardian",
+        "required": [
+          "id",
+          "sequence_order",
+          "number_of_guardians",
+          "quorum",
+          "election_key_pair",
+          "auxiliary_key_pair"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "sequence_order": {
+            "title": "Sequence Order",
+            "type": "integer"
+          },
+          "number_of_guardians": {
+            "title": "Number Of Guardians",
+            "type": "integer"
+          },
+          "quorum": {
+            "title": "Quorum",
+            "type": "integer"
+          },
+          "election_key_pair": {
+            "$ref": "#/components/schemas/ElectionKeyPair"
+          },
+          "auxiliary_key_pair": {
+            "$ref": "#/components/schemas/AuxiliaryKeyPair"
+          }
+        }
+      },
+      "GuardianBackup": {
+        "title": "GuardianBackup",
+        "required": [
+          "id",
+          "election_partial_key_backups"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "election_partial_key_backups": {
+            "title": "Election Partial Key Backups",
+            "type": "array",
+            "items": {}
+          }
+        }
+      },
+      "GuardianBackupRequest": {
+        "title": "GuardianBackupRequest",
+        "required": [
+          "guardian_id",
+          "quorum",
+          "auxiliary_public_keys"
+        ],
+        "type": "object",
+        "properties": {
+          "guardian_id": {
+            "title": "Guardian Id",
+            "type": "string"
+          },
+          "quorum": {
+            "title": "Quorum",
+            "type": "integer"
+          },
+          "election_polynomial": {
+            "title": "Election Polynomial"
+          },
+          "auxiliary_public_keys": {
+            "title": "Auxiliary Public Keys",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AuxiliaryPublicKey"
+            }
+          },
+          "override_rsa": {
+            "title": "Override Rsa",
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "GuardianRequest": {
+        "title": "GuardianRequest",
+        "required": [
+          "id",
+          "sequence_order",
+          "number_of_guardians",
+          "quorum"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "sequence_order": {
+            "title": "Sequence Order",
+            "type": "integer"
+          },
+          "number_of_guardians": {
+            "title": "Number Of Guardians",
+            "type": "integer"
+          },
+          "quorum": {
+            "title": "Quorum",
+            "type": "integer"
+          },
+          "nonce": {
+            "title": "Nonce",
+            "type": "string"
+          },
+          "auxiliary_key_pair": {
+            "$ref": "#/components/schemas/AuxiliaryKeyPair"
+          }
+        }
+      },
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
