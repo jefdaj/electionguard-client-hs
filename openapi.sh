@@ -15,8 +15,8 @@ generate-api-module() {
     --package-name "$pkgname" \
     --module-name "$modname" \
     --convert-to-camel-case \
-    "$json" 2>&1 | tee "${pkgname}-code-generator.log"
+    "$json" 2>&1 | tee "${outdir}.log"
 }
 
-generate-api-module openapi-guardian.json "electionguard-guardian-api" "ElectionGuard.API.Guardian.Generated" "guardian"
-generate-api-module openapi-mediator.json "electionguard-mediator-api" "ElectionGuard.API.Mediator.Generated" "mediator"
+generate-api-module generated/guardian.json "electionguard-guardian-api" "ElectionGuard.API.Guardian.Generated" "generated/guardian"
+generate-api-module generated/mediator.json "electionguard-mediator-api" "ElectionGuard.API.Mediator.Generated" "generated/mediator"

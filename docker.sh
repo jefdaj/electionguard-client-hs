@@ -7,7 +7,7 @@
 
 docker pull electionguard/electionguard-web-api:latest -q
 
-ensure-container() {
+ensure-container-running() {
   # based on https://stackoverflow.com/a/38576401
   name="$1"; mode="$2"; port="$3"
 	echo
@@ -26,17 +26,18 @@ ensure-container() {
 	echo "  http://localhost:${port}/redoc"
 }
 
-ensure-container electionguard-guardian guardian 8001
-ensure-container electionguard-mediator mediator 8002
+ensure-container-running electionguard-guardian guardian 8001
+ensure-container-running electionguard-mediator mediator 8002
 
-ensure-json() {
+ensure-json-generated() {
   name="$1"; port="$2"
-  filename="openapi-${name}.json"
+  filename="generated/${name}.json"
   [[ -a "$filename" ]] && echo "$filename already exists" && return
+  mkdir -p "$(dirname "$filename")"
   curl -s "http://localhost:${port}/api/v1/openapi.json" | jq . > "$filename"
 }
 
 # TODO auto-update when the api changes? or pin the docker container?
 echo
-ensure-json guardian 8001
-ensure-json mediator 8002
+ensure-json-generated guardian 8001
+ensure-json-generated mediator 8002

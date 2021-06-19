@@ -1,0 +1,57 @@
+cabal-version: 1.12
+
+name:           electionguard-guardian-api
+version:        0.1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      ElectionGuard.API.Guardian.Generated
+      ElectionGuard.API.Guardian.Generated.Operations.DecryptBallotSharesApiV1BallotDecryptSharesPost
+      ElectionGuard.API.Guardian.Generated.Operations.CreateGuardianApiV1GuardianPost
+      ElectionGuard.API.Guardian.Generated.Operations.CreateGuardianBackupApiV1GuardianBackupPost
+      ElectionGuard.API.Guardian.Generated.Operations.VerifyBackupApiV1GuardianBackupVerifyPost
+      ElectionGuard.API.Guardian.Generated.Operations.CreateBackupChallengeApiV1GuardianChallengePost
+      ElectionGuard.API.Guardian.Generated.Operations.VerifyChallengeApiV1GuardianChallengeVerifyPost
+      ElectionGuard.API.Guardian.Generated.Operations.GenerateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePost
+      ElectionGuard.API.Guardian.Generated.Operations.GenerateElectionKeysApiV1KeyElectionGeneratePost
+      ElectionGuard.API.Guardian.Generated.Operations.PingApiV1PingGet
+      ElectionGuard.API.Guardian.Generated.Operations.DecryptShareApiV1TallyDecryptSharePost
+      ElectionGuard.API.Guardian.Generated.Types
+      ElectionGuard.API.Guardian.Generated.CyclicTypes
+      ElectionGuard.API.Guardian.Generated.Types.AuxiliaryKeyPair
+      ElectionGuard.API.Guardian.Generated.Types.AuxiliaryPublicKey
+      ElectionGuard.API.Guardian.Generated.Types.BackupChallengeRequest
+      ElectionGuard.API.Guardian.Generated.Types.ChallengeVerificationRequest
+      ElectionGuard.API.Guardian.Generated.Types.ElectionKeyPair
+      ElectionGuard.API.Guardian.Generated.Types.ElectionKeyPairRequest
+      ElectionGuard.API.Guardian.Generated.Types.GuardianBackup
+      ElectionGuard.API.Guardian.Generated.Types.ValidationError
+      ElectionGuard.API.Guardian.Generated.Types.BackupVerificationRequest
+      ElectionGuard.API.Guardian.Generated.Types.Guardian
+      ElectionGuard.API.Guardian.Generated.Types.GuardianBackupRequest
+      ElectionGuard.API.Guardian.Generated.Types.GuardianRequest
+      ElectionGuard.API.Guardian.Generated.Types.HTTPValidationError
+      ElectionGuard.API.Guardian.Generated.Types.DecryptBallotSharesRequest
+      ElectionGuard.API.Guardian.Generated.Types.DecryptTallyShareRequest
+      ElectionGuard.API.Guardian.Generated.Configuration
+      ElectionGuard.API.Guardian.Generated.SecuritySchemes
+      ElectionGuard.API.Guardian.Generated.Common
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , text
+    , ghc-prim
+    , http-conduit
+    , http-client
+    , http-types
+    , bytestring
+    , aeson
+    , unordered-containers
+    , vector
+    , scientific
+    , time
+    , mtl
+    , transformers
+  default-language: Haskell2010
