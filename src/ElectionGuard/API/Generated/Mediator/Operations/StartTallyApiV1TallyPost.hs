@@ -45,7 +45,7 @@ import ElectionGuard.API.Mediator.Generated.Types
 -- | > POST /api/v1/tally
 -- 
 -- Start a new tally of a collection of ballots
-startTallyApiV1TallyPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+startTallyApiV1TallyPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
   -> StartTallyRequest                                                                                                                    -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response StartTallyApiV1TallyPostResponse)) -- ^ Monad containing the result of the operation
 startTallyApiV1TallyPost config
@@ -59,7 +59,7 @@ startTallyApiV1TallyPost config
 -- The same as 'startTallyApiV1TallyPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 startTallyApiV1TallyPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                              ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                               ElectionGuard.API.Generated.Common.Configuration s ->
+                               ElectionGuard.API.Generated.Configuration s ->
                                StartTallyRequest ->
                                m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                      (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ startTallyApiV1TallyPostRaw config
 startTallyApiV1TallyPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                            ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                              StartTallyRequest ->
-                             Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                             Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                 m
                                                                 (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                     (Network.HTTP.Client.Types.Response StartTallyApiV1TallyPostResponse))
@@ -86,7 +86,7 @@ startTallyApiV1TallyPostM body = GHC.Base.fmap (GHC.Base.fmap (\response_3 -> GH
 startTallyApiV1TallyPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                               ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                 StartTallyRequest ->
-                                Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                    m
                                                                    (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                        (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

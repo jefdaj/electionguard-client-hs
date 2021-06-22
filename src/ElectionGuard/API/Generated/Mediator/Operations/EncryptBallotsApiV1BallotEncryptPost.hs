@@ -45,7 +45,7 @@ import ElectionGuard.API.Mediator.Generated.Types
 -- | > POST /api/v1/ballot/encrypt
 -- 
 -- Encrypt one or more ballots
-encryptBallotsApiV1BallotEncryptPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+encryptBallotsApiV1BallotEncryptPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
   -> EncryptBallotsRequest                                                                                                                            -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response EncryptBallotsApiV1BallotEncryptPostResponse)) -- ^ Monad containing the result of the operation
 encryptBallotsApiV1BallotEncryptPost config
@@ -59,7 +59,7 @@ encryptBallotsApiV1BallotEncryptPost config
 -- The same as 'encryptBallotsApiV1BallotEncryptPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 encryptBallotsApiV1BallotEncryptPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                          ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                           ElectionGuard.API.Generated.Common.Configuration s ->
+                                           ElectionGuard.API.Generated.Configuration s ->
                                            EncryptBallotsRequest ->
                                            m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                  (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ encryptBallotsApiV1BallotEncryptPostRaw config
 encryptBallotsApiV1BallotEncryptPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                        ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                          EncryptBallotsRequest ->
-                                         Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                         Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                             m
                                                                             (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                 (Network.HTTP.Client.Types.Response EncryptBallotsApiV1BallotEncryptPostResponse))
@@ -86,7 +86,7 @@ encryptBallotsApiV1BallotEncryptPostM body = GHC.Base.fmap (GHC.Base.fmap (\resp
 encryptBallotsApiV1BallotEncryptPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                           ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                             EncryptBallotsRequest ->
-                                            Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                            Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                                m
                                                                                (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                    (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

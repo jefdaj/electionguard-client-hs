@@ -45,7 +45,7 @@ import ElectionGuard.API.Mediator.Generated.Types
 -- | > POST /api/v1/tally/decrypt
 -- 
 -- Decrypt a tally from a collection of decrypted guardian shares
-decryptTallyApiV1TallyDecryptPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+decryptTallyApiV1TallyDecryptPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
   -> DecryptTallyRequest                                                                                                                           -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response DecryptTallyApiV1TallyDecryptPostResponse)) -- ^ Monad containing the result of the operation
 decryptTallyApiV1TallyDecryptPost config
@@ -59,7 +59,7 @@ decryptTallyApiV1TallyDecryptPost config
 -- The same as 'decryptTallyApiV1TallyDecryptPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 decryptTallyApiV1TallyDecryptPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                       ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                        ElectionGuard.API.Generated.Common.Configuration s ->
+                                        ElectionGuard.API.Generated.Configuration s ->
                                         DecryptTallyRequest ->
                                         m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                               (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ decryptTallyApiV1TallyDecryptPostRaw config
 decryptTallyApiV1TallyDecryptPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                     ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                       DecryptTallyRequest ->
-                                      Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                      Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                          m
                                                                          (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                              (Network.HTTP.Client.Types.Response DecryptTallyApiV1TallyDecryptPostResponse))
@@ -86,7 +86,7 @@ decryptTallyApiV1TallyDecryptPostM body = GHC.Base.fmap (GHC.Base.fmap (\respons
 decryptTallyApiV1TallyDecryptPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                        ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                          DecryptTallyRequest ->
-                                         Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                         Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                             m
                                                                             (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                 (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

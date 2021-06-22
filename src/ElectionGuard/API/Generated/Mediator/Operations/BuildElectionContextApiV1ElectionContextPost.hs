@@ -45,7 +45,7 @@ import ElectionGuard.API.Mediator.Generated.Types
 -- | > POST /api/v1/election/context
 -- 
 -- Build a CiphertextElectionContext for a given election
-buildElectionContextApiV1ElectionContextPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+buildElectionContextApiV1ElectionContextPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
   -> ElectionContextRequest                                                                                                                                   -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response BuildElectionContextApiV1ElectionContextPostResponse)) -- ^ Monad containing the result of the operation
 buildElectionContextApiV1ElectionContextPost config
@@ -59,7 +59,7 @@ buildElectionContextApiV1ElectionContextPost config
 -- The same as 'buildElectionContextApiV1ElectionContextPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 buildElectionContextApiV1ElectionContextPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                  ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                   ElectionGuard.API.Generated.Common.Configuration s ->
+                                                   ElectionGuard.API.Generated.Configuration s ->
                                                    ElectionContextRequest ->
                                                    m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                          (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ buildElectionContextApiV1ElectionContextPostRaw config
 buildElectionContextApiV1ElectionContextPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                  ElectionContextRequest ->
-                                                 Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                                 Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                                     m
                                                                                     (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                         (Network.HTTP.Client.Types.Response BuildElectionContextApiV1ElectionContextPostResponse))
@@ -86,7 +86,7 @@ buildElectionContextApiV1ElectionContextPostM body = GHC.Base.fmap (GHC.Base.fma
 buildElectionContextApiV1ElectionContextPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                   ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                     ElectionContextRequest ->
-                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                                        m
                                                                                        (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                            (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

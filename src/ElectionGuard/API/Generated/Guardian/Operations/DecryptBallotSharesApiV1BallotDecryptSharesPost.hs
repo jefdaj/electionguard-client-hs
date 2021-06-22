@@ -45,7 +45,7 @@ import ElectionGuard.API.Guardian.Generated.Types
 -- | > POST /api/v1/ballot/decrypt-shares
 -- 
 -- Decrypt this guardian\'s share of one or more ballots
-decryptBallotSharesApiV1BallotDecryptSharesPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+decryptBallotSharesApiV1BallotDecryptSharesPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
   -> DecryptBallotSharesRequest                                                                                                                                  -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response DecryptBallotSharesApiV1BallotDecryptSharesPostResponse)) -- ^ Monad containing the result of the operation
 decryptBallotSharesApiV1BallotDecryptSharesPost config
@@ -59,7 +59,7 @@ decryptBallotSharesApiV1BallotDecryptSharesPost config
 -- The same as 'decryptBallotSharesApiV1BallotDecryptSharesPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 decryptBallotSharesApiV1BallotDecryptSharesPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                     ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                      ElectionGuard.API.Generated.Common.Configuration s ->
+                                                      ElectionGuard.API.Generated.Configuration s ->
                                                       DecryptBallotSharesRequest ->
                                                       m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                             (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ decryptBallotSharesApiV1BallotDecryptSharesPostRaw config
 decryptBallotSharesApiV1BallotDecryptSharesPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                   ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                     DecryptBallotSharesRequest ->
-                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                                        m
                                                                                        (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                            (Network.HTTP.Client.Types.Response DecryptBallotSharesApiV1BallotDecryptSharesPostResponse))
@@ -86,7 +86,7 @@ decryptBallotSharesApiV1BallotDecryptSharesPostM body = GHC.Base.fmap (GHC.Base.
 decryptBallotSharesApiV1BallotDecryptSharesPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                      ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                        DecryptBallotSharesRequest ->
-                                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                                           m
                                                                                           (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                               (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

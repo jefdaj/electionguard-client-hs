@@ -45,7 +45,7 @@ import ElectionGuard.API.Guardian.Generated.Types
 -- | > GET /api/v1/ping
 -- 
 -- Ensure API can be pinged
-pingApiV1PingGet :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+pingApiV1PingGet :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response PingApiV1PingGetResponse)) -- ^ Monad containing the result of the operation
 pingApiV1PingGet config = GHC.Base.fmap (GHC.Base.fmap (\response_0 -> GHC.Base.fmap (Data.Either.either PingApiV1PingGetResponseError GHC.Base.id GHC.Base.. (\response body -> if | (\status_1 -> Network.HTTP.Types.Status.statusCode status_1 GHC.Classes.== 200) (Network.HTTP.Client.Types.responseStatus response) -> PingApiV1PingGetResponse200 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                     Data.Text.Internal.Text)
@@ -55,7 +55,7 @@ pingApiV1PingGet config = GHC.Base.fmap (GHC.Base.fmap (\response_0 -> GHC.Base.
 -- The same as 'pingApiV1PingGet' but returns the raw 'Data.ByteString.Char8.ByteString'
 pingApiV1PingGetRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                      ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                       ElectionGuard.API.Generated.Common.Configuration s ->
+                       ElectionGuard.API.Generated.Configuration s ->
                        m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                              (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
 pingApiV1PingGetRaw config = GHC.Base.id (ElectionGuard.API.Generated.Common.doCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/ping") [])
@@ -64,7 +64,7 @@ pingApiV1PingGetRaw config = GHC.Base.id (ElectionGuard.API.Generated.Common.doC
 -- Monadic version of 'pingApiV1PingGet' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
 pingApiV1PingGetM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                    ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                     Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                     Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                         m
                                                         (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                             (Network.HTTP.Client.Types.Response PingApiV1PingGetResponse))
@@ -76,7 +76,7 @@ pingApiV1PingGetM = GHC.Base.fmap (GHC.Base.fmap (\response_2 -> GHC.Base.fmap (
 -- Monadic version of 'pingApiV1PingGetRaw' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
 pingApiV1PingGetRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                       ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                        Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                        Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                            m
                                                            (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

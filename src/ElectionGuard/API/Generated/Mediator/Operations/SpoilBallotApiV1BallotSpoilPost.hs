@@ -45,7 +45,7 @@ import ElectionGuard.API.Mediator.Generated.Types
 -- | > POST /api/v1/ballot/spoil
 -- 
 -- Spoil ballot
-spoilBallotApiV1BallotSpoilPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+spoilBallotApiV1BallotSpoilPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
   -> AcceptBallotRequest                                                                                                                         -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response SpoilBallotApiV1BallotSpoilPostResponse)) -- ^ Monad containing the result of the operation
 spoilBallotApiV1BallotSpoilPost config
@@ -59,7 +59,7 @@ spoilBallotApiV1BallotSpoilPost config
 -- The same as 'spoilBallotApiV1BallotSpoilPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 spoilBallotApiV1BallotSpoilPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                     ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                      ElectionGuard.API.Generated.Common.Configuration s ->
+                                      ElectionGuard.API.Generated.Configuration s ->
                                       AcceptBallotRequest ->
                                       m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                             (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ spoilBallotApiV1BallotSpoilPostRaw config
 spoilBallotApiV1BallotSpoilPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                   ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                     AcceptBallotRequest ->
-                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                        m
                                                                        (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                            (Network.HTTP.Client.Types.Response SpoilBallotApiV1BallotSpoilPostResponse))
@@ -86,7 +86,7 @@ spoilBallotApiV1BallotSpoilPostM body = GHC.Base.fmap (GHC.Base.fmap (\response_
 spoilBallotApiV1BallotSpoilPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                      ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                        AcceptBallotRequest ->
-                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                           m
                                                                           (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                               (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

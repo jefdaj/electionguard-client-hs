@@ -47,7 +47,7 @@ import ElectionGuard.API.Guardian.Generated.Types
 -- Generate all election partial key backups based on existing public keys
 -- :param request: Guardian backup request
 -- :return: Guardian backup
-createGuardianBackupApiV1GuardianBackupPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+createGuardianBackupApiV1GuardianBackupPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
   -> GuardianBackupRequest                                                                                                                                   -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response CreateGuardianBackupApiV1GuardianBackupPostResponse)) -- ^ Monad containing the result of the operation
 createGuardianBackupApiV1GuardianBackupPost config
@@ -61,7 +61,7 @@ createGuardianBackupApiV1GuardianBackupPost config
 -- The same as 'createGuardianBackupApiV1GuardianBackupPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 createGuardianBackupApiV1GuardianBackupPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                 ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                  ElectionGuard.API.Generated.Common.Configuration s ->
+                                                  ElectionGuard.API.Generated.Configuration s ->
                                                   GuardianBackupRequest ->
                                                   m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                         (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -73,7 +73,7 @@ createGuardianBackupApiV1GuardianBackupPostRaw config
 createGuardianBackupApiV1GuardianBackupPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                               ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                 GuardianBackupRequest ->
-                                                Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                                Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                                    m
                                                                                    (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                        (Network.HTTP.Client.Types.Response CreateGuardianBackupApiV1GuardianBackupPostResponse))
@@ -88,7 +88,7 @@ createGuardianBackupApiV1GuardianBackupPostM body = GHC.Base.fmap (GHC.Base.fmap
 createGuardianBackupApiV1GuardianBackupPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                  ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                    GuardianBackupRequest ->
-                                                   Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                                   Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                                       m
                                                                                       (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                           (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

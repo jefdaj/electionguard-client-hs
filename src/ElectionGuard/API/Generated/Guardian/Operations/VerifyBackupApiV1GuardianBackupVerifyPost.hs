@@ -45,7 +45,7 @@ import ElectionGuard.API.Guardian.Generated.Types
 -- | > POST /api/v1/guardian/backup/verify
 -- 
 -- Verify Backup
-verifyBackupApiV1GuardianBackupVerifyPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+verifyBackupApiV1GuardianBackupVerifyPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
   -> BackupVerificationRequest                                                                                                                             -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response VerifyBackupApiV1GuardianBackupVerifyPostResponse)) -- ^ Monad containing the result of the operation
 verifyBackupApiV1GuardianBackupVerifyPost config
@@ -59,7 +59,7 @@ verifyBackupApiV1GuardianBackupVerifyPost config
 -- The same as 'verifyBackupApiV1GuardianBackupVerifyPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 verifyBackupApiV1GuardianBackupVerifyPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                               ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                ElectionGuard.API.Generated.Common.Configuration s ->
+                                                ElectionGuard.API.Generated.Configuration s ->
                                                 BackupVerificationRequest ->
                                                 m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                       (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ verifyBackupApiV1GuardianBackupVerifyPostRaw config
 verifyBackupApiV1GuardianBackupVerifyPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                             ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                               BackupVerificationRequest ->
-                                              Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                              Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                                  m
                                                                                  (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                      (Network.HTTP.Client.Types.Response VerifyBackupApiV1GuardianBackupVerifyPostResponse))
@@ -86,7 +86,7 @@ verifyBackupApiV1GuardianBackupVerifyPostM body = GHC.Base.fmap (GHC.Base.fmap (
 verifyBackupApiV1GuardianBackupVerifyPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                  BackupVerificationRequest ->
-                                                 Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                                 Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                                     m
                                                                                     (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                         (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

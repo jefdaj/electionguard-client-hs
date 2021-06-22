@@ -45,7 +45,7 @@ import ElectionGuard.API.Guardian.Generated.Types
 -- | > POST /api/v1/tally/decrypt-share
 -- 
 -- Decrypt a single guardian\'s share of a tally
-decryptShareApiV1TallyDecryptSharePost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+decryptShareApiV1TallyDecryptSharePost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
   -> DecryptTallyShareRequest                                                                                                                           -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response DecryptShareApiV1TallyDecryptSharePostResponse)) -- ^ Monad containing the result of the operation
 decryptShareApiV1TallyDecryptSharePost config
@@ -59,7 +59,7 @@ decryptShareApiV1TallyDecryptSharePost config
 -- The same as 'decryptShareApiV1TallyDecryptSharePost' but returns the raw 'Data.ByteString.Char8.ByteString'
 decryptShareApiV1TallyDecryptSharePostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                            ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                             ElectionGuard.API.Generated.Common.Configuration s ->
+                                             ElectionGuard.API.Generated.Configuration s ->
                                              DecryptTallyShareRequest ->
                                              m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                    (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ decryptShareApiV1TallyDecryptSharePostRaw config
 decryptShareApiV1TallyDecryptSharePostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                          ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                            DecryptTallyShareRequest ->
-                                           Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                           Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                               m
                                                                               (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                   (Network.HTTP.Client.Types.Response DecryptShareApiV1TallyDecryptSharePostResponse))
@@ -86,7 +86,7 @@ decryptShareApiV1TallyDecryptSharePostM body = GHC.Base.fmap (GHC.Base.fmap (\re
 decryptShareApiV1TallyDecryptSharePostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                             ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                               DecryptTallyShareRequest ->
-                                              Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
+                                              Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
                                                                                  m
                                                                                  (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                      (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
