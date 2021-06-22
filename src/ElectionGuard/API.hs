@@ -18,11 +18,16 @@ module ElectionGuard.API
   , RequestBodyEncoding (..)
 
   -- Generated.Configuration
+  , Configuration
   , defaultURL
   , defaultConfiguration
 
   -- Generated.Types
   , HTTPValidationError
+
+  -- handwritten wrappers for the rest of the generated code
+  , module ElectionGuard.API.Guardian
+  , module ElectionGuard.API.Mediator
 
   )
   where
@@ -30,3 +35,6 @@ module ElectionGuard.API
 import ElectionGuard.API.Generated.Common
 import ElectionGuard.API.Generated.Configuration
 import ElectionGuard.API.Generated.Types
+
+import ElectionGuard.API.Guardian
+import ElectionGuard.API.Mediator
