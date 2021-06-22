@@ -31,7 +31,7 @@ module ElectionGuard.API.Mediator.Generated (
   module ElectionGuard.API.Mediator.Generated.Types.ValidationError,
   module ElectionGuard.API.Mediator.Generated.Types.HTTPValidationError,
   module ElectionGuard.API.Mediator.Generated.Configuration,
-  module ElectionGuard.API.Mediator.Generated.SecuritySchemes,
+  module ElectionGuard.API.Generated.SecuritySchemes,
   module ElectionGuard.API.Generated.Common,
   ) where
 
@@ -64,5 +64,5 @@ import ElectionGuard.API.Mediator.Generated.Types.ValidateElectionDescriptionReq
 import ElectionGuard.API.Mediator.Generated.Types.ValidationError
 import ElectionGuard.API.Mediator.Generated.Types.HTTPValidationError
 import ElectionGuard.API.Mediator.Generated.Configuration
-import ElectionGuard.API.Mediator.Generated.SecuritySchemes
+import ElectionGuard.API.Generated.SecuritySchemes
 import ElectionGuard.API.Generated.Common

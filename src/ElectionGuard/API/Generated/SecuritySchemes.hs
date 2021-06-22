@@ -3,7 +3,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 -- | Contains all supported security schemes defined in the specification
-module ElectionGuard.API.Mediator.Generated.SecuritySchemes where
+module ElectionGuard.API.Generated.SecuritySchemes where
 
 import qualified Data.Text.Internal
 import qualified GHC.Base
