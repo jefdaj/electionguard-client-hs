@@ -1,0 +1,32 @@
+re-export common stuff to deduplicate:
+  ping
+  Common.hs
+  Configuration.hs (include a test config for localhost)
+  SecuritySchemes.hs? it seems empty
+
+re-export simpler version of guardian operations:
+  createBackupChallenge
+  createGuardian
+  createGuardianBackup
+  decryptBallotShares
+  decryptShare
+  generateAuxiliaryKeys
+  generateElectionKeys
+
+re-export simpler versions of mediator operations:
+  verifyBackup
+  verifyChallenge
+  appendToTally
+  buildElectionContext
+  castBallot
+  combineElectionKeys
+  convertTrackerToWords
+  decryptBallots
+  decryptTally
+  encryptBallots
+  getElectionConstants
+  spoilBallot
+  startTally
+  validateElectionDescription
+
+try to translate the python unit tests into haskell using the api
