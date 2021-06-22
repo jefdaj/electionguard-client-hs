@@ -25,6 +25,7 @@ source-repository head
 
 library
   exposed-modules:
+      ElectionGuard.API.Guardian
       ElectionGuard.API.Guardian.Generated
       ElectionGuard.API.Guardian.Generated.Common
       ElectionGuard.API.Guardian.Generated.Configuration
@@ -56,6 +57,7 @@ library
       ElectionGuard.API.Guardian.Generated.Types.GuardianRequest
       ElectionGuard.API.Guardian.Generated.Types.HTTPValidationError
       ElectionGuard.API.Guardian.Generated.Types.ValidationError
+      ElectionGuard.API.Mediator
       ElectionGuard.API.Mediator.Generated
       ElectionGuard.API.Mediator.Generated.Common
       ElectionGuard.API.Mediator.Generated.Configuration
