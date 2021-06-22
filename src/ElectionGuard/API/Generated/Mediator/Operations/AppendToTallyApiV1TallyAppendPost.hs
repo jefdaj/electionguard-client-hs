@@ -6,7 +6,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the different functions to run the operation appendToTallyApiV1TallyAppendPost
-module ElectionGuard.API.Mediator.Generated.Operations.AppendToTallyApiV1TallyAppendPost where
+module ElectionGuard.API.Generated.Mediator.Operations.AppendToTallyApiV1TallyAppendPost where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
@@ -40,12 +40,12 @@ import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
 import qualified ElectionGuard.API.Generated.Common
-import ElectionGuard.API.Mediator.Generated.Types
+import ElectionGuard.API.Generated.Mediator.Types
 
 -- | > POST /api/v1/tally/append
 -- 
 -- Append ballots into an existing tally
-appendToTallyApiV1TallyAppendPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
+appendToTallyApiV1TallyAppendPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> AppendTallyRequest                                                                                                                            -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response AppendToTallyApiV1TallyAppendPostResponse)) -- ^ Monad containing the result of the operation
 appendToTallyApiV1TallyAppendPost config
@@ -59,7 +59,7 @@ appendToTallyApiV1TallyAppendPost config
 -- The same as 'appendToTallyApiV1TallyAppendPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 appendToTallyApiV1TallyAppendPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                       ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                        ElectionGuard.API.Generated.Configuration s ->
+                                        ElectionGuard.API.Generated.Common.Configuration s ->
                                         AppendTallyRequest ->
                                         m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                               (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ appendToTallyApiV1TallyAppendPostRaw config
 appendToTallyApiV1TallyAppendPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                     ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                       AppendTallyRequest ->
-                                      Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                      Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                          m
                                                                          (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                              (Network.HTTP.Client.Types.Response AppendToTallyApiV1TallyAppendPostResponse))
@@ -86,7 +86,7 @@ appendToTallyApiV1TallyAppendPostM body = GHC.Base.fmap (GHC.Base.fmap (\respons
 appendToTallyApiV1TallyAppendPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                        ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                          AppendTallyRequest ->
-                                         Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                         Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                             m
                                                                             (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                 (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

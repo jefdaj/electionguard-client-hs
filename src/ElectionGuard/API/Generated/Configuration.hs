@@ -3,7 +3,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 -- | Contains the default configuration
-module ElectionGuard.API.Guardian.Generated.Configuration where
+module ElectionGuard.API.Generated.Configuration where
 
 import qualified Data.Text
 import qualified ElectionGuard.API.Generated.Common
@@ -13,4 +13,4 @@ import qualified ElectionGuard.API.Generated.Common
 -- @/@
 defaultURL = Data.Text.pack "/"
 -- | The default configuration containing the 'defaultURL' and no authorization
-defaultConfiguration = ElectionGuard.API.Generated.Configuration defaultURL ElectionGuard.API.Generated.Common.AnonymousSecurityScheme
+defaultConfiguration = ElectionGuard.API.Generated.Common.Configuration defaultURL ElectionGuard.API.Generated.Common.AnonymousSecurityScheme

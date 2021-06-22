@@ -6,7 +6,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the different functions to run the operation validateElectionDescriptionApiV1ElectionValidateDescriptionPost
-module ElectionGuard.API.Mediator.Generated.Operations.ValidateElectionDescriptionApiV1ElectionValidateDescriptionPost where
+module ElectionGuard.API.Generated.Mediator.Operations.ValidateElectionDescriptionApiV1ElectionValidateDescriptionPost where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
@@ -40,12 +40,12 @@ import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
 import qualified ElectionGuard.API.Generated.Common
-import ElectionGuard.API.Mediator.Generated.Types
+import ElectionGuard.API.Generated.Mediator.Types
 
 -- | > POST /api/v1/election/validate/description
 -- 
 -- Validate an Election description or manifest for a given election
-validateElectionDescriptionApiV1ElectionValidateDescriptionPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
+validateElectionDescriptionApiV1ElectionValidateDescriptionPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> ValidateElectionDescriptionRequest                                                                                                                                          -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response ValidateElectionDescriptionApiV1ElectionValidateDescriptionPostResponse)) -- ^ Monad containing the result of the operation
 validateElectionDescriptionApiV1ElectionValidateDescriptionPost config
@@ -59,7 +59,7 @@ validateElectionDescriptionApiV1ElectionValidateDescriptionPost config
 -- The same as 'validateElectionDescriptionApiV1ElectionValidateDescriptionPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 validateElectionDescriptionApiV1ElectionValidateDescriptionPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                                     ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                                      ElectionGuard.API.Generated.Configuration s ->
+                                                                      ElectionGuard.API.Generated.Common.Configuration s ->
                                                                       ValidateElectionDescriptionRequest ->
                                                                       m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                             (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ validateElectionDescriptionApiV1ElectionValidateDescriptionPostRaw config
 validateElectionDescriptionApiV1ElectionValidateDescriptionPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                                   ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                                     ValidateElectionDescriptionRequest ->
-                                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                                        m
                                                                                                        (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                                            (Network.HTTP.Client.Types.Response ValidateElectionDescriptionApiV1ElectionValidateDescriptionPostResponse))
@@ -86,7 +86,7 @@ validateElectionDescriptionApiV1ElectionValidateDescriptionPostM body = GHC.Base
 validateElectionDescriptionApiV1ElectionValidateDescriptionPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                                      ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                                        ValidateElectionDescriptionRequest ->
-                                                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                                           m
                                                                                                           (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                                               (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

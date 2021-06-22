@@ -6,7 +6,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the different functions to run the operation createGuardianApiV1GuardianPost
-module ElectionGuard.API.Guardian.Generated.Operations.CreateGuardianApiV1GuardianPost where
+module ElectionGuard.API.Generated.Guardian.Operations.CreateGuardianApiV1GuardianPost where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
@@ -40,12 +40,12 @@ import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
 import qualified ElectionGuard.API.Generated.Common
-import ElectionGuard.API.Guardian.Generated.Types
+import ElectionGuard.API.Generated.Guardian.Types
 
 -- | > POST /api/v1/guardian
 -- 
 -- Create a guardian for the election process with the associated keys
-createGuardianApiV1GuardianPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
+createGuardianApiV1GuardianPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> GuardianRequest                                                                                                                             -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response CreateGuardianApiV1GuardianPostResponse)) -- ^ Monad containing the result of the operation
 createGuardianApiV1GuardianPost config
@@ -59,7 +59,7 @@ createGuardianApiV1GuardianPost config
 -- The same as 'createGuardianApiV1GuardianPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 createGuardianApiV1GuardianPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                     ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                      ElectionGuard.API.Generated.Configuration s ->
+                                      ElectionGuard.API.Generated.Common.Configuration s ->
                                       GuardianRequest ->
                                       m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                             (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ createGuardianApiV1GuardianPostRaw config
 createGuardianApiV1GuardianPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                   ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                     GuardianRequest ->
-                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                        m
                                                                        (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                            (Network.HTTP.Client.Types.Response CreateGuardianApiV1GuardianPostResponse))
@@ -86,7 +86,7 @@ createGuardianApiV1GuardianPostM body = GHC.Base.fmap (GHC.Base.fmap (\response_
 createGuardianApiV1GuardianPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                      ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                        GuardianRequest ->
-                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                           m
                                                                           (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                               (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

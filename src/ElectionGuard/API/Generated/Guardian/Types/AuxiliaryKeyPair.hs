@@ -4,7 +4,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the types generated from the schema AuxiliaryKeyPair
-module ElectionGuard.API.Guardian.Generated.Types.AuxiliaryKeyPair where
+module ElectionGuard.API.Generated.Guardian.Types.AuxiliaryKeyPair where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe

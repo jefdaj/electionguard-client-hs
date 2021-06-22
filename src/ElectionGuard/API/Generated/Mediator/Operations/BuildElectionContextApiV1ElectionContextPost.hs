@@ -6,7 +6,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the different functions to run the operation buildElectionContextApiV1ElectionContextPost
-module ElectionGuard.API.Mediator.Generated.Operations.BuildElectionContextApiV1ElectionContextPost where
+module ElectionGuard.API.Generated.Mediator.Operations.BuildElectionContextApiV1ElectionContextPost where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
@@ -40,12 +40,12 @@ import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
 import qualified ElectionGuard.API.Generated.Common
-import ElectionGuard.API.Mediator.Generated.Types
+import ElectionGuard.API.Generated.Mediator.Types
 
 -- | > POST /api/v1/election/context
 -- 
 -- Build a CiphertextElectionContext for a given election
-buildElectionContextApiV1ElectionContextPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
+buildElectionContextApiV1ElectionContextPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> ElectionContextRequest                                                                                                                                   -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response BuildElectionContextApiV1ElectionContextPostResponse)) -- ^ Monad containing the result of the operation
 buildElectionContextApiV1ElectionContextPost config
@@ -59,7 +59,7 @@ buildElectionContextApiV1ElectionContextPost config
 -- The same as 'buildElectionContextApiV1ElectionContextPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 buildElectionContextApiV1ElectionContextPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                  ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                   ElectionGuard.API.Generated.Configuration s ->
+                                                   ElectionGuard.API.Generated.Common.Configuration s ->
                                                    ElectionContextRequest ->
                                                    m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                          (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ buildElectionContextApiV1ElectionContextPostRaw config
 buildElectionContextApiV1ElectionContextPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                  ElectionContextRequest ->
-                                                 Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                 Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                     m
                                                                                     (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                         (Network.HTTP.Client.Types.Response BuildElectionContextApiV1ElectionContextPostResponse))
@@ -86,7 +86,7 @@ buildElectionContextApiV1ElectionContextPostM body = GHC.Base.fmap (GHC.Base.fma
 buildElectionContextApiV1ElectionContextPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                   ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                     ElectionContextRequest ->
-                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                        m
                                                                                        (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                            (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

@@ -4,7 +4,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains all types with cyclic dependencies (between each other or to itself)
-module ElectionGuard.API.Mediator.Generated.CyclicTypes where
+module ElectionGuard.API.Generated.Mediator.CyclicTypes where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
@@ -28,16 +28,16 @@ import qualified GHC.Int
 import qualified GHC.Show
 import qualified GHC.Types
 import qualified ElectionGuard.API.Generated.Common
-import ElectionGuard.API.Mediator.Generated.Types.AcceptBallotRequest
-import ElectionGuard.API.Mediator.Generated.Types.AppendTallyRequest
-import ElectionGuard.API.Mediator.Generated.Types.CombineElectionKeysRequest
-import ElectionGuard.API.Mediator.Generated.Types.DecryptBallotsRequest
-import ElectionGuard.API.Mediator.Generated.Types.DecryptTallyRequest
-import ElectionGuard.API.Mediator.Generated.Types.ElectionContextRequest
-import ElectionGuard.API.Mediator.Generated.Types.ElectionJointKey
-import ElectionGuard.API.Mediator.Generated.Types.EncryptBallotsRequest
-import ElectionGuard.API.Mediator.Generated.Types.StartTallyRequest
-import ElectionGuard.API.Mediator.Generated.Types.TrackerWordsRequest
-import ElectionGuard.API.Mediator.Generated.Types.ValidateElectionDescriptionRequest
-import ElectionGuard.API.Mediator.Generated.Types.ValidationError
-import ElectionGuard.API.Mediator.Generated.Types.HTTPValidationError
+import ElectionGuard.API.Generated.Mediator.Types.AcceptBallotRequest
+import ElectionGuard.API.Generated.Mediator.Types.AppendTallyRequest
+import ElectionGuard.API.Generated.Mediator.Types.CombineElectionKeysRequest
+import ElectionGuard.API.Generated.Mediator.Types.DecryptBallotsRequest
+import ElectionGuard.API.Generated.Mediator.Types.DecryptTallyRequest
+import ElectionGuard.API.Generated.Mediator.Types.ElectionContextRequest
+import ElectionGuard.API.Generated.Mediator.Types.ElectionJointKey
+import ElectionGuard.API.Generated.Mediator.Types.EncryptBallotsRequest
+import ElectionGuard.API.Generated.Mediator.Types.StartTallyRequest
+import ElectionGuard.API.Generated.Mediator.Types.TrackerWordsRequest
+import ElectionGuard.API.Generated.Mediator.Types.ValidateElectionDescriptionRequest
+import ElectionGuard.API.Generated.Mediator.Types.ValidationError
+import ElectionGuard.API.Generated.Mediator.Types.HTTPValidationError

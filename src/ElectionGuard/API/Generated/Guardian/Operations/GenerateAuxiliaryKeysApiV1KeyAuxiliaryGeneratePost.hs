@@ -6,7 +6,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the different functions to run the operation generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePost
-module ElectionGuard.API.Guardian.Generated.Operations.GenerateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePost where
+module ElectionGuard.API.Generated.Guardian.Operations.GenerateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePost where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
@@ -40,13 +40,13 @@ import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
 import qualified ElectionGuard.API.Generated.Common
-import ElectionGuard.API.Guardian.Generated.Types
+import ElectionGuard.API.Generated.Guardian.Types
 
 -- | > POST /api/v1/key/auxiliary/generate
 -- 
 -- Generate auxiliary key pair for auxiliary uses during process
 -- :return: Auxiliary key pair
-generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
+generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response GenerateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePostResponse)) -- ^ Monad containing the result of the operation
 generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePost config = GHC.Base.fmap (GHC.Base.fmap (\response_0 -> GHC.Base.fmap (Data.Either.either GenerateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePostResponseError GHC.Base.id GHC.Base.. (\response body -> if | (\status_1 -> Network.HTTP.Types.Status.statusCode status_1 GHC.Classes.== 200) (Network.HTTP.Client.Types.responseStatus response) -> GenerateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePostResponse200 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           AuxiliaryKeyPair)
@@ -56,7 +56,7 @@ generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePost config = GHC.Base.fmap (GHC.B
 -- The same as 'generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePost' but returns the raw 'Data.ByteString.Char8.ByteString'
 generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                        ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                         ElectionGuard.API.Generated.Configuration s ->
+                                                         ElectionGuard.API.Generated.Common.Configuration s ->
                                                          m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
 generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePostRaw config = GHC.Base.id (ElectionGuard.API.Generated.Common.doCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/key/auxiliary/generate") [])
@@ -65,7 +65,7 @@ generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePostRaw config = GHC.Base.id (Elec
 -- Monadic version of 'generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePost' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
 generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                      ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                           m
                                                                                           (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                               (Network.HTTP.Client.Types.Response GenerateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePostResponse))
@@ -77,7 +77,7 @@ generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePostM = GHC.Base.fmap (GHC.Base.fm
 -- Monadic version of 'generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePostRaw' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
 generateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                         ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                          Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                          Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                              m
                                                                                              (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                                  (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

@@ -6,7 +6,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the different functions to run the operation verifyChallengeApiV1GuardianChallengeVerifyPost
-module ElectionGuard.API.Guardian.Generated.Operations.VerifyChallengeApiV1GuardianChallengeVerifyPost where
+module ElectionGuard.API.Generated.Guardian.Operations.VerifyChallengeApiV1GuardianChallengeVerifyPost where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
@@ -40,12 +40,12 @@ import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
 import qualified ElectionGuard.API.Generated.Common
-import ElectionGuard.API.Guardian.Generated.Types
+import ElectionGuard.API.Generated.Guardian.Types
 
 -- | > POST /api/v1/guardian/challenge/verify
 -- 
 -- Verify Challenge
-verifyChallengeApiV1GuardianChallengeVerifyPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
+verifyChallengeApiV1GuardianChallengeVerifyPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> ChallengeVerificationRequest                                                                                                                                -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response VerifyChallengeApiV1GuardianChallengeVerifyPostResponse)) -- ^ Monad containing the result of the operation
 verifyChallengeApiV1GuardianChallengeVerifyPost config
@@ -59,7 +59,7 @@ verifyChallengeApiV1GuardianChallengeVerifyPost config
 -- The same as 'verifyChallengeApiV1GuardianChallengeVerifyPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 verifyChallengeApiV1GuardianChallengeVerifyPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                     ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                      ElectionGuard.API.Generated.Configuration s ->
+                                                      ElectionGuard.API.Generated.Common.Configuration s ->
                                                       ChallengeVerificationRequest ->
                                                       m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                             (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ verifyChallengeApiV1GuardianChallengeVerifyPostRaw config
 verifyChallengeApiV1GuardianChallengeVerifyPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                   ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                     ChallengeVerificationRequest ->
-                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                        m
                                                                                        (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                            (Network.HTTP.Client.Types.Response VerifyChallengeApiV1GuardianChallengeVerifyPostResponse))
@@ -86,7 +86,7 @@ verifyChallengeApiV1GuardianChallengeVerifyPostM body = GHC.Base.fmap (GHC.Base.
 verifyChallengeApiV1GuardianChallengeVerifyPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                      ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                        ChallengeVerificationRequest ->
-                                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                           m
                                                                                           (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                               (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

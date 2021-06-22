@@ -6,7 +6,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the different functions to run the operation convertTrackerToWordsApiV1TrackerWordsPost
-module ElectionGuard.API.Mediator.Generated.Operations.ConvertTrackerToWordsApiV1TrackerWordsPost where
+module ElectionGuard.API.Generated.Mediator.Operations.ConvertTrackerToWordsApiV1TrackerWordsPost where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
@@ -40,12 +40,12 @@ import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
 import qualified ElectionGuard.API.Generated.Common
-import ElectionGuard.API.Mediator.Generated.Types
+import ElectionGuard.API.Generated.Mediator.Types
 
 -- | > POST /api/v1/tracker/words
 -- 
 -- Convert tracker from hash to human readable \/ friendly words
-convertTrackerToWordsApiV1TrackerWordsPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
+convertTrackerToWordsApiV1TrackerWordsPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> TrackerWordsRequest                                                                                                                                    -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response ConvertTrackerToWordsApiV1TrackerWordsPostResponse)) -- ^ Monad containing the result of the operation
 convertTrackerToWordsApiV1TrackerWordsPost config
@@ -59,7 +59,7 @@ convertTrackerToWordsApiV1TrackerWordsPost config
 -- The same as 'convertTrackerToWordsApiV1TrackerWordsPost' but returns the raw 'Data.ByteString.Char8.ByteString'
 convertTrackerToWordsApiV1TrackerWordsPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                 ElectionGuard.API.Generated.Configuration s ->
+                                                 ElectionGuard.API.Generated.Common.Configuration s ->
                                                  TrackerWordsRequest ->
                                                  m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                        (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ convertTrackerToWordsApiV1TrackerWordsPostRaw config
 convertTrackerToWordsApiV1TrackerWordsPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                              ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                TrackerWordsRequest ->
-                                               Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                               Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                   m
                                                                                   (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                       (Network.HTTP.Client.Types.Response ConvertTrackerToWordsApiV1TrackerWordsPostResponse))
@@ -86,7 +86,7 @@ convertTrackerToWordsApiV1TrackerWordsPostM body = GHC.Base.fmap (GHC.Base.fmap 
 convertTrackerToWordsApiV1TrackerWordsPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                 ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                   TrackerWordsRequest ->
-                                                  Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                  Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                      m
                                                                                      (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                          (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

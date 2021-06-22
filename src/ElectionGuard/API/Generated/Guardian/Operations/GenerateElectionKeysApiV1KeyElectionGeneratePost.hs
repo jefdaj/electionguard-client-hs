@@ -6,7 +6,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the different functions to run the operation generateElectionKeysApiV1KeyElectionGeneratePost
-module ElectionGuard.API.Guardian.Generated.Operations.GenerateElectionKeysApiV1KeyElectionGeneratePost where
+module ElectionGuard.API.Generated.Guardian.Operations.GenerateElectionKeysApiV1KeyElectionGeneratePost where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
@@ -40,14 +40,14 @@ import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
 import qualified ElectionGuard.API.Generated.Common
-import ElectionGuard.API.Guardian.Generated.Types
+import ElectionGuard.API.Generated.Guardian.Types
 
 -- | > POST /api/v1/key/election/generate
 -- 
 -- Generate election key pairs for use in election process
 -- :param request: Election key pair request
 -- :return: Election key pair
-generateElectionKeysApiV1KeyElectionGeneratePost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
+generateElectionKeysApiV1KeyElectionGeneratePost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> ElectionKeyPairRequest                                                                                                                                       -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response GenerateElectionKeysApiV1KeyElectionGeneratePostResponse)) -- ^ Monad containing the result of the operation
 generateElectionKeysApiV1KeyElectionGeneratePost config
@@ -61,7 +61,7 @@ generateElectionKeysApiV1KeyElectionGeneratePost config
 -- The same as 'generateElectionKeysApiV1KeyElectionGeneratePost' but returns the raw 'Data.ByteString.Char8.ByteString'
 generateElectionKeysApiV1KeyElectionGeneratePostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                      ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                       ElectionGuard.API.Generated.Configuration s ->
+                                                       ElectionGuard.API.Generated.Common.Configuration s ->
                                                        ElectionKeyPairRequest ->
                                                        m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                              (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -73,7 +73,7 @@ generateElectionKeysApiV1KeyElectionGeneratePostRaw config
 generateElectionKeysApiV1KeyElectionGeneratePostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                    ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                      ElectionKeyPairRequest ->
-                                                     Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                     Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                         m
                                                                                         (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                             (Network.HTTP.Client.Types.Response GenerateElectionKeysApiV1KeyElectionGeneratePostResponse))
@@ -88,7 +88,7 @@ generateElectionKeysApiV1KeyElectionGeneratePostM body = GHC.Base.fmap (GHC.Base
 generateElectionKeysApiV1KeyElectionGeneratePostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                       ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                         ElectionKeyPairRequest ->
-                                                        Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                        Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                            m
                                                                                            (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                                (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

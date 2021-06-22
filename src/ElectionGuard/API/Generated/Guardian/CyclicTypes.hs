@@ -4,7 +4,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains all types with cyclic dependencies (between each other or to itself)
-module ElectionGuard.API.Guardian.Generated.CyclicTypes where
+module ElectionGuard.API.Generated.Guardian.CyclicTypes where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
@@ -28,18 +28,18 @@ import qualified GHC.Int
 import qualified GHC.Show
 import qualified GHC.Types
 import qualified ElectionGuard.API.Generated.Common
-import ElectionGuard.API.Guardian.Generated.Types.AuxiliaryKeyPair
-import ElectionGuard.API.Guardian.Generated.Types.AuxiliaryPublicKey
-import ElectionGuard.API.Guardian.Generated.Types.BackupChallengeRequest
-import ElectionGuard.API.Guardian.Generated.Types.ChallengeVerificationRequest
-import ElectionGuard.API.Guardian.Generated.Types.ElectionKeyPair
-import ElectionGuard.API.Guardian.Generated.Types.ElectionKeyPairRequest
-import ElectionGuard.API.Guardian.Generated.Types.GuardianBackup
-import ElectionGuard.API.Guardian.Generated.Types.ValidationError
-import ElectionGuard.API.Guardian.Generated.Types.BackupVerificationRequest
-import ElectionGuard.API.Guardian.Generated.Types.Guardian
-import ElectionGuard.API.Guardian.Generated.Types.GuardianBackupRequest
-import ElectionGuard.API.Guardian.Generated.Types.GuardianRequest
-import ElectionGuard.API.Guardian.Generated.Types.HTTPValidationError
-import ElectionGuard.API.Guardian.Generated.Types.DecryptBallotSharesRequest
-import ElectionGuard.API.Guardian.Generated.Types.DecryptTallyShareRequest
+import ElectionGuard.API.Generated.Guardian.Types.AuxiliaryKeyPair
+import ElectionGuard.API.Generated.Guardian.Types.AuxiliaryPublicKey
+import ElectionGuard.API.Generated.Guardian.Types.BackupChallengeRequest
+import ElectionGuard.API.Generated.Guardian.Types.ChallengeVerificationRequest
+import ElectionGuard.API.Generated.Guardian.Types.ElectionKeyPair
+import ElectionGuard.API.Generated.Guardian.Types.ElectionKeyPairRequest
+import ElectionGuard.API.Generated.Guardian.Types.GuardianBackup
+import ElectionGuard.API.Generated.Guardian.Types.ValidationError
+import ElectionGuard.API.Generated.Guardian.Types.BackupVerificationRequest
+import ElectionGuard.API.Generated.Guardian.Types.Guardian
+import ElectionGuard.API.Generated.Guardian.Types.GuardianBackupRequest
+import ElectionGuard.API.Generated.Guardian.Types.GuardianRequest
+import ElectionGuard.API.Generated.Guardian.Types.HTTPValidationError
+import ElectionGuard.API.Generated.Guardian.Types.DecryptBallotSharesRequest
+import ElectionGuard.API.Generated.Guardian.Types.DecryptTallyShareRequest

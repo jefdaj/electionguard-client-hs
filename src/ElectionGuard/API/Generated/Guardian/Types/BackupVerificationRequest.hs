@@ -4,7 +4,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the types generated from the schema BackupVerificationRequest
-module ElectionGuard.API.Guardian.Generated.Types.BackupVerificationRequest where
+module ElectionGuard.API.Generated.Guardian.Types.BackupVerificationRequest where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
@@ -28,7 +28,7 @@ import qualified GHC.Int
 import qualified GHC.Show
 import qualified GHC.Types
 import qualified ElectionGuard.API.Generated.Common
-import ElectionGuard.API.Guardian.Generated.Types.AuxiliaryKeyPair
+import ElectionGuard.API.Generated.Guardian.Types.AuxiliaryKeyPair
 
 -- | Defines the data type for the schema BackupVerificationRequest
 -- 

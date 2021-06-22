@@ -7,8 +7,8 @@ module ElectionGuard.API.Guardian
 
 import Network.HTTP.Client (HttpException, Response)
 import ElectionGuard.API.Generated.Common (Configuration, SecurityScheme, MonadHTTP)
-import ElectionGuard.API.Guardian.Generated.Types.HTTPValidationError
-import ElectionGuard.API.Guardian.Generated.Operations.PingApiV1PingGet
+import ElectionGuard.API.Generated.Guardian.Types.HTTPValidationError
+import ElectionGuard.API.Generated.Guardian.Operations.PingApiV1PingGet
 import Control.Monad.Trans.Reader (ReaderT)
 
 -- TODO does this make sense? maybe go with ByteString first

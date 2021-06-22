@@ -6,7 +6,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the different functions to run the operation combineElectionKeysApiV1KeyElectionCombinePost
-module ElectionGuard.API.Mediator.Generated.Operations.CombineElectionKeysApiV1KeyElectionCombinePost where
+module ElectionGuard.API.Generated.Mediator.Operations.CombineElectionKeysApiV1KeyElectionCombinePost where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
@@ -40,13 +40,13 @@ import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
 import qualified ElectionGuard.API.Generated.Common
-import ElectionGuard.API.Mediator.Generated.Types
+import ElectionGuard.API.Generated.Mediator.Types
 
 -- | > POST /api/v1/key/election/combine
 -- 
 -- Combine public election keys into a final one
 -- :return: Combine Election key
-combineElectionKeysApiV1KeyElectionCombinePost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
+combineElectionKeysApiV1KeyElectionCombinePost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> CombineElectionKeysRequest                                                                                                                                 -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response CombineElectionKeysApiV1KeyElectionCombinePostResponse)) -- ^ Monad containing the result of the operation
 combineElectionKeysApiV1KeyElectionCombinePost config
@@ -60,7 +60,7 @@ combineElectionKeysApiV1KeyElectionCombinePost config
 -- The same as 'combineElectionKeysApiV1KeyElectionCombinePost' but returns the raw 'Data.ByteString.Char8.ByteString'
 combineElectionKeysApiV1KeyElectionCombinePostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                    ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                     ElectionGuard.API.Generated.Configuration s ->
+                                                     ElectionGuard.API.Generated.Common.Configuration s ->
                                                      CombineElectionKeysRequest ->
                                                      m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                            (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -72,7 +72,7 @@ combineElectionKeysApiV1KeyElectionCombinePostRaw config
 combineElectionKeysApiV1KeyElectionCombinePostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                  ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                    CombineElectionKeysRequest ->
-                                                   Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                   Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                       m
                                                                                       (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                           (Network.HTTP.Client.Types.Response CombineElectionKeysApiV1KeyElectionCombinePostResponse))
@@ -87,7 +87,7 @@ combineElectionKeysApiV1KeyElectionCombinePostM body = GHC.Base.fmap (GHC.Base.f
 combineElectionKeysApiV1KeyElectionCombinePostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                     ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                       CombineElectionKeysRequest ->
-                                                      Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                      Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                          m
                                                                                          (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                              (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

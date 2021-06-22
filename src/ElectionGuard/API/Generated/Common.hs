@@ -65,7 +65,7 @@ instance MonadHTTP m => MonadHTTP (MR.ReaderT r m) where
 -- * Path level
 -- * Operation level
 --
--- To get started, the 'ElectionGuard.API.Guardian.Generated.Configuration.defaultConfiguration' can be used and changed accordingly.
+-- To get started, the 'ElectionGuard.API.Generated.Common.Configuration.defaultConfiguration' can be used and changed accordingly.
 --
 -- Note that it is possible that @BearerAuthenticationSecurityScheme@ is not available because it is not a security scheme in the OpenAPI specification.
 --

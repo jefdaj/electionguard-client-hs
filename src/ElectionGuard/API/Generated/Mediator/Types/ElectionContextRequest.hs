@@ -4,7 +4,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the types generated from the schema ElectionContextRequest
-module ElectionGuard.API.Mediator.Generated.Types.ElectionContextRequest where
+module ElectionGuard.API.Generated.Mediator.Types.ElectionContextRequest where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe

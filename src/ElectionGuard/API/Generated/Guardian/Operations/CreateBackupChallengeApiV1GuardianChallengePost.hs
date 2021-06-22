@@ -6,7 +6,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the different functions to run the operation createBackupChallengeApiV1GuardianChallengePost
-module ElectionGuard.API.Guardian.Generated.Operations.CreateBackupChallengeApiV1GuardianChallengePost where
+module ElectionGuard.API.Generated.Guardian.Operations.CreateBackupChallengeApiV1GuardianChallengePost where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
@@ -40,12 +40,12 @@ import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
 import qualified ElectionGuard.API.Generated.Common
-import ElectionGuard.API.Guardian.Generated.Types
+import ElectionGuard.API.Generated.Guardian.Types
 
 -- | > POST /api/v1/guardian/challenge
 -- 
 -- Create Backup Challenge
-createBackupChallengeApiV1GuardianChallengePost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Configuration s  -- ^ The configuration to use in the request
+createBackupChallengeApiV1GuardianChallengePost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> BackupChallengeRequest                                                                                                                                      -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response CreateBackupChallengeApiV1GuardianChallengePostResponse)) -- ^ Monad containing the result of the operation
 createBackupChallengeApiV1GuardianChallengePost config
@@ -59,7 +59,7 @@ createBackupChallengeApiV1GuardianChallengePost config
 -- The same as 'createBackupChallengeApiV1GuardianChallengePost' but returns the raw 'Data.ByteString.Char8.ByteString'
 createBackupChallengeApiV1GuardianChallengePostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                     ElectionGuard.API.Generated.Common.SecurityScheme s) =>
-                                                      ElectionGuard.API.Generated.Configuration s ->
+                                                      ElectionGuard.API.Generated.Common.Configuration s ->
                                                       BackupChallengeRequest ->
                                                       m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                             (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
@@ -71,7 +71,7 @@ createBackupChallengeApiV1GuardianChallengePostRaw config
 createBackupChallengeApiV1GuardianChallengePostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                   ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                     BackupChallengeRequest ->
-                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                        m
                                                                                        (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                            (Network.HTTP.Client.Types.Response CreateBackupChallengeApiV1GuardianChallengePostResponse))
@@ -86,7 +86,7 @@ createBackupChallengeApiV1GuardianChallengePostM body = GHC.Base.fmap (GHC.Base.
 createBackupChallengeApiV1GuardianChallengePostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
                                                                      ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                        BackupChallengeRequest ->
-                                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Configuration s)
+                                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                           m
                                                                                           (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                               (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))

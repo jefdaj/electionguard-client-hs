@@ -4,7 +4,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the types generated from the schema GuardianBackup
-module ElectionGuard.API.Guardian.Generated.Types.GuardianBackup where
+module ElectionGuard.API.Generated.Guardian.Types.GuardianBackup where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe
