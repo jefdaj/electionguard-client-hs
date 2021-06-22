@@ -41,6 +41,7 @@ import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
 import qualified ElectionGuard.API.Generated.Common
 import ElectionGuard.API.Generated.Mediator.Types
+import ElectionGuard.API.Generated.Types
 
 -- | > POST /api/v1/election/validate/description
 -- 

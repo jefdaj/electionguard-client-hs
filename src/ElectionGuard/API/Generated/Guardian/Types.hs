@@ -15,11 +15,12 @@ module ElectionGuard.API.Generated.Guardian.Types (
   module ElectionGuard.API.Generated.Guardian.Types.Guardian,
   module ElectionGuard.API.Generated.Guardian.Types.GuardianBackupRequest,
   module ElectionGuard.API.Generated.Guardian.Types.GuardianRequest,
-  module ElectionGuard.API.Generated.Guardian.Types.HTTPValidationError,
   module ElectionGuard.API.Generated.Guardian.Types.DecryptBallotSharesRequest,
   module ElectionGuard.API.Generated.Guardian.Types.DecryptTallyShareRequest,
+  module ElectionGuard.API.Generated.Types
   ) where
 
+import ElectionGuard.API.Generated.Types
 import ElectionGuard.API.Generated.Guardian.CyclicTypes
 import ElectionGuard.API.Generated.Guardian.Types.AuxiliaryKeyPair
 import ElectionGuard.API.Generated.Guardian.Types.AuxiliaryPublicKey
@@ -33,6 +34,5 @@ import ElectionGuard.API.Generated.Guardian.Types.BackupVerificationRequest
 import ElectionGuard.API.Generated.Guardian.Types.Guardian
 import ElectionGuard.API.Generated.Guardian.Types.GuardianBackupRequest
 import ElectionGuard.API.Generated.Guardian.Types.GuardianRequest
-import ElectionGuard.API.Generated.Guardian.Types.HTTPValidationError
 import ElectionGuard.API.Generated.Guardian.Types.DecryptBallotSharesRequest
 import ElectionGuard.API.Generated.Guardian.Types.DecryptTallyShareRequest

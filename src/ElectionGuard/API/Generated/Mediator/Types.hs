@@ -15,9 +15,10 @@ module ElectionGuard.API.Generated.Mediator.Types (
   module ElectionGuard.API.Generated.Mediator.Types.TrackerWordsRequest,
   module ElectionGuard.API.Generated.Mediator.Types.ValidateElectionDescriptionRequest,
   module ElectionGuard.API.Generated.Mediator.Types.ValidationError,
-  module ElectionGuard.API.Generated.Mediator.Types.HTTPValidationError,
+  module ElectionGuard.API.Generated.Types
   ) where
 
+import ElectionGuard.API.Generated.Types
 import ElectionGuard.API.Generated.Mediator.CyclicTypes
 import ElectionGuard.API.Generated.Mediator.Types.AcceptBallotRequest
 import ElectionGuard.API.Generated.Mediator.Types.AppendTallyRequest
@@ -31,4 +32,3 @@ import ElectionGuard.API.Generated.Mediator.Types.StartTallyRequest
 import ElectionGuard.API.Generated.Mediator.Types.TrackerWordsRequest
 import ElectionGuard.API.Generated.Mediator.Types.ValidateElectionDescriptionRequest
 import ElectionGuard.API.Generated.Mediator.Types.ValidationError
-import ElectionGuard.API.Generated.Mediator.Types.HTTPValidationError

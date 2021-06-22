@@ -40,4 +40,4 @@ import ElectionGuard.API.Generated.Mediator.Types.StartTallyRequest
 import ElectionGuard.API.Generated.Mediator.Types.TrackerWordsRequest
 import ElectionGuard.API.Generated.Mediator.Types.ValidateElectionDescriptionRequest
 import ElectionGuard.API.Generated.Mediator.Types.ValidationError
-import ElectionGuard.API.Generated.Mediator.Types.HTTPValidationError
+import ElectionGuard.API.Generated.Types.HTTPValidationError

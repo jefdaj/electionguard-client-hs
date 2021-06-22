@@ -26,7 +26,7 @@ module ElectionGuard.API.Generated.Guardian (
   module ElectionGuard.API.Generated.Guardian.Types.Guardian,
   module ElectionGuard.API.Generated.Guardian.Types.GuardianBackupRequest,
   module ElectionGuard.API.Generated.Guardian.Types.GuardianRequest,
-  module ElectionGuard.API.Generated.Guardian.Types.HTTPValidationError,
+  module ElectionGuard.API.Generated.Types.HTTPValidationError,
   module ElectionGuard.API.Generated.Guardian.Types.DecryptBallotSharesRequest,
   module ElectionGuard.API.Generated.Guardian.Types.DecryptTallyShareRequest,
   module ElectionGuard.API.Generated.Configuration,
@@ -58,7 +58,7 @@ import ElectionGuard.API.Generated.Guardian.Types.BackupVerificationRequest
 import ElectionGuard.API.Generated.Guardian.Types.Guardian
 import ElectionGuard.API.Generated.Guardian.Types.GuardianBackupRequest
 import ElectionGuard.API.Generated.Guardian.Types.GuardianRequest
-import ElectionGuard.API.Generated.Guardian.Types.HTTPValidationError
+import ElectionGuard.API.Generated.Types.HTTPValidationError
 import ElectionGuard.API.Generated.Guardian.Types.DecryptBallotSharesRequest
 import ElectionGuard.API.Generated.Guardian.Types.DecryptTallyShareRequest
 import ElectionGuard.API.Generated.Configuration

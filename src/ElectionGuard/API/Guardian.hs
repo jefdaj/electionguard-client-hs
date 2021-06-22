@@ -7,7 +7,7 @@ module ElectionGuard.API.Guardian
 
 import Network.HTTP.Client (HttpException, Response)
 import ElectionGuard.API.Generated.Common (Configuration, SecurityScheme, MonadHTTP)
-import ElectionGuard.API.Generated.Guardian.Types.HTTPValidationError
+import ElectionGuard.API.Generated.Types.HTTPValidationError
 import ElectionGuard.API.Generated.Guardian.Operations.PingApiV1PingGet
 import Control.Monad.Trans.Reader (ReaderT)
 

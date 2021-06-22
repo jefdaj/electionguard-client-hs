@@ -40,6 +40,6 @@ import ElectionGuard.API.Generated.Guardian.Types.BackupVerificationRequest
 import ElectionGuard.API.Generated.Guardian.Types.Guardian
 import ElectionGuard.API.Generated.Guardian.Types.GuardianBackupRequest
 import ElectionGuard.API.Generated.Guardian.Types.GuardianRequest
-import ElectionGuard.API.Generated.Guardian.Types.HTTPValidationError
+import ElectionGuard.API.Generated.Types.HTTPValidationError
 import ElectionGuard.API.Generated.Guardian.Types.DecryptBallotSharesRequest
 import ElectionGuard.API.Generated.Guardian.Types.DecryptTallyShareRequest

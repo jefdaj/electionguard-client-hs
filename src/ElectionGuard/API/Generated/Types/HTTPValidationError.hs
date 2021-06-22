@@ -4,7 +4,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 -- | Contains the types generated from the schema HTTPValidationError
-module ElectionGuard.API.Generated.Guardian.Types.HTTPValidationError where
+module ElectionGuard.API.Generated.Types.HTTPValidationError where
 
 import qualified Prelude as GHC.Integer.Type
 import qualified Prelude as GHC.Maybe

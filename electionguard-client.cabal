@@ -25,10 +25,26 @@ source-repository head
 
 library
   exposed-modules:
+
+      -- TODO remove the default lib module
+      Lib
+
+      -- all handwritten code is in these modules
+      ElectionGuard.API.Config
+      -- ElectionGuard.API.Types
       ElectionGuard.API.Guardian
-      ElectionGuard.API.Generated.Guardian
+      ElectionGuard.API.Mediator
+
+      -- these were generated identically for guardian and mediator, so i factored them out
       ElectionGuard.API.Generated.Common
       ElectionGuard.API.Generated.Configuration
+      ElectionGuard.API.Generated.SecuritySchemes
+      ElectionGuard.API.Generated.Types
+      ElectionGuard.API.Generated.Types.HTTPValidationError
+
+      -- generated guardian modules
+      -- TODO move to other-modules?
+      ElectionGuard.API.Generated.Guardian
       ElectionGuard.API.Generated.Guardian.CyclicTypes
       ElectionGuard.API.Generated.Guardian.Operations.CreateBackupChallengeApiV1GuardianChallengePost
       ElectionGuard.API.Generated.Guardian.Operations.CreateGuardianApiV1GuardianPost
@@ -40,7 +56,6 @@ library
       ElectionGuard.API.Generated.Guardian.Operations.PingApiV1PingGet
       ElectionGuard.API.Generated.Guardian.Operations.VerifyBackupApiV1GuardianBackupVerifyPost
       ElectionGuard.API.Generated.Guardian.Operations.VerifyChallengeApiV1GuardianChallengeVerifyPost
-      ElectionGuard.API.Generated.SecuritySchemes
       ElectionGuard.API.Generated.Guardian.Types
       ElectionGuard.API.Generated.Guardian.Types.AuxiliaryKeyPair
       ElectionGuard.API.Generated.Guardian.Types.AuxiliaryPublicKey
@@ -55,9 +70,10 @@ library
       ElectionGuard.API.Generated.Guardian.Types.GuardianBackup
       ElectionGuard.API.Generated.Guardian.Types.GuardianBackupRequest
       ElectionGuard.API.Generated.Guardian.Types.GuardianRequest
-      ElectionGuard.API.Generated.Guardian.Types.HTTPValidationError
       ElectionGuard.API.Generated.Guardian.Types.ValidationError
-      ElectionGuard.API.Mediator
+
+      -- generated mediator modules
+      -- TODO move to other-modules?
       ElectionGuard.API.Generated.Mediator
       ElectionGuard.API.Generated.Mediator.CyclicTypes
       ElectionGuard.API.Generated.Mediator.Operations.AppendToTallyApiV1TallyAppendPost
@@ -82,12 +98,11 @@ library
       ElectionGuard.API.Generated.Mediator.Types.ElectionContextRequest
       ElectionGuard.API.Generated.Mediator.Types.ElectionJointKey
       ElectionGuard.API.Generated.Mediator.Types.EncryptBallotsRequest
-      ElectionGuard.API.Generated.Mediator.Types.HTTPValidationError
       ElectionGuard.API.Generated.Mediator.Types.StartTallyRequest
       ElectionGuard.API.Generated.Mediator.Types.TrackerWordsRequest
       ElectionGuard.API.Generated.Mediator.Types.ValidateElectionDescriptionRequest
       ElectionGuard.API.Generated.Mediator.Types.ValidationError
-      Lib
+
   other-modules:
       Paths_electionguard_client
   hs-source-dirs:
