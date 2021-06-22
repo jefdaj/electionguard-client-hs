@@ -27,7 +27,7 @@ import qualified GHC.Generics
 import qualified GHC.Int
 import qualified GHC.Show
 import qualified GHC.Types
-import qualified ElectionGuard.API.Mediator.Generated.Common
+import qualified ElectionGuard.API.Generated.Common
 import ElectionGuard.API.Mediator.Generated.Types.ValidationError
 
 -- | Defines the data type for the schema HTTPValidationError

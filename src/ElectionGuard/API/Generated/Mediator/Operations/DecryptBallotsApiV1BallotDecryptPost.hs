@@ -39,13 +39,13 @@ import qualified Network.HTTP.Simple
 import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
-import qualified ElectionGuard.API.Mediator.Generated.Common
+import qualified ElectionGuard.API.Generated.Common
 import ElectionGuard.API.Mediator.Generated.Types
 
 -- | > POST /api/v1/ballot/decrypt
 -- 
 -- Decrypt Ballots
-decryptBallotsApiV1BallotDecryptPost :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m, ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) => ElectionGuard.API.Mediator.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+decryptBallotsApiV1BallotDecryptPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> DecryptBallotsRequest                                                                                                                            -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response DecryptBallotsApiV1BallotDecryptPostResponse)) -- ^ Monad containing the result of the operation
 decryptBallotsApiV1BallotDecryptPost config
@@ -53,25 +53,25 @@ decryptBallotsApiV1BallotDecryptPost config
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               DecryptBallotsApiV1BallotDecryptPostResponseBody200)
                                                                                                                                                                                                                           | (\status_2 -> Network.HTTP.Types.Status.statusCode status_2 GHC.Classes.== 422) (Network.HTTP.Client.Types.responseStatus response) -> DecryptBallotsApiV1BallotDecryptPostResponse422 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               HTTPValidationError)
-                                                                                                                                                                                                                          | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Mediator.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/decrypt") [] (GHC.Maybe.Just body) ElectionGuard.API.Mediator.Generated.Common.RequestBodyEncodingJSON)
+                                                                                                                                                                                                                          | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/decrypt") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/ballot/decrypt
 -- 
 -- The same as 'decryptBallotsApiV1BallotDecryptPost' but returns the raw 'Data.ByteString.Char8.ByteString'
-decryptBallotsApiV1BallotDecryptPostRaw :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                                         ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
-                                           ElectionGuard.API.Mediator.Generated.Common.Configuration s ->
+decryptBallotsApiV1BallotDecryptPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                         ElectionGuard.API.Generated.Common.SecurityScheme s) =>
+                                           ElectionGuard.API.Generated.Common.Configuration s ->
                                            DecryptBallotsRequest ->
                                            m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                  (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
 decryptBallotsApiV1BallotDecryptPostRaw config
-                                        body = GHC.Base.id (ElectionGuard.API.Mediator.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/decrypt") [] (GHC.Maybe.Just body) ElectionGuard.API.Mediator.Generated.Common.RequestBodyEncodingJSON)
+                                        body = GHC.Base.id (ElectionGuard.API.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/decrypt") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/ballot/decrypt
 -- 
--- Monadic version of 'decryptBallotsApiV1BallotDecryptPost' (use with 'ElectionGuard.API.Mediator.Generated.Common.runWithConfiguration')
-decryptBallotsApiV1BallotDecryptPostM :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                                       ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
+-- Monadic version of 'decryptBallotsApiV1BallotDecryptPost' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+decryptBallotsApiV1BallotDecryptPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                       ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                          DecryptBallotsRequest ->
-                                         Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Mediator.Generated.Common.Configuration s)
+                                         Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                             m
                                                                             (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                 (Network.HTTP.Client.Types.Response DecryptBallotsApiV1BallotDecryptPostResponse))
@@ -79,18 +79,18 @@ decryptBallotsApiV1BallotDecryptPostM body = GHC.Base.fmap (GHC.Base.fmap (\resp
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                DecryptBallotsApiV1BallotDecryptPostResponseBody200)
                                                                                                                                                                                                                            | (\status_5 -> Network.HTTP.Types.Status.statusCode status_5 GHC.Classes.== 422) (Network.HTTP.Client.Types.responseStatus response) -> DecryptBallotsApiV1BallotDecryptPostResponse422 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                HTTPValidationError)
-                                                                                                                                                                                                                           | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_3) response_3)) (ElectionGuard.API.Mediator.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/decrypt") [] (GHC.Maybe.Just body) ElectionGuard.API.Mediator.Generated.Common.RequestBodyEncodingJSON)
+                                                                                                                                                                                                                           | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_3) response_3)) (ElectionGuard.API.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/decrypt") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/ballot/decrypt
 -- 
--- Monadic version of 'decryptBallotsApiV1BallotDecryptPostRaw' (use with 'ElectionGuard.API.Mediator.Generated.Common.runWithConfiguration')
-decryptBallotsApiV1BallotDecryptPostRawM :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                                          ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
+-- Monadic version of 'decryptBallotsApiV1BallotDecryptPostRaw' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+decryptBallotsApiV1BallotDecryptPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                          ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                             DecryptBallotsRequest ->
-                                            Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Mediator.Generated.Common.Configuration s)
+                                            Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                m
                                                                                (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                    (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
-decryptBallotsApiV1BallotDecryptPostRawM body = GHC.Base.id (ElectionGuard.API.Mediator.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/decrypt") [] (GHC.Maybe.Just body) ElectionGuard.API.Mediator.Generated.Common.RequestBodyEncodingJSON)
+decryptBallotsApiV1BallotDecryptPostRawM body = GHC.Base.id (ElectionGuard.API.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/decrypt") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | Represents a response of the operation 'decryptBallotsApiV1BallotDecryptPost'.
 -- 
 -- The response constructor is chosen by the status code of the response. If no case matches (no specific case for the response code, no range case, no default case), 'DecryptBallotsApiV1BallotDecryptPostResponseError' is used.

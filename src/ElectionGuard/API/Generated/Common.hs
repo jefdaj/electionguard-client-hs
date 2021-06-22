@@ -4,7 +4,7 @@
 {-# LANGUAGE UndecidableInstances #-}
 
 -- | This module serves the purpose of defining common functionality which remains the same across all OpenAPI specifications.
-module ElectionGuard.API.Guardian.Generated.Common
+module ElectionGuard.API.Generated.Common
   ( Configuration (..),
     doCallWithConfiguration,
     doCallWithConfigurationM,

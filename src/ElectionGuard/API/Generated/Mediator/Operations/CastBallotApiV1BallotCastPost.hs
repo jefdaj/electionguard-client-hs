@@ -39,13 +39,13 @@ import qualified Network.HTTP.Simple
 import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
-import qualified ElectionGuard.API.Mediator.Generated.Common
+import qualified ElectionGuard.API.Generated.Common
 import ElectionGuard.API.Mediator.Generated.Types
 
 -- | > POST /api/v1/ballot/cast
 -- 
 -- Cast ballot
-castBallotApiV1BallotCastPost :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m, ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) => ElectionGuard.API.Mediator.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+castBallotApiV1BallotCastPost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> AcceptBallotRequest                                                                                                                       -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response CastBallotApiV1BallotCastPostResponse)) -- ^ Monad containing the result of the operation
 castBallotApiV1BallotCastPost config
@@ -53,25 +53,25 @@ castBallotApiV1BallotCastPost config
                                                                                                                                                                                                                                                                                                                                                                                                                                                                          CastBallotApiV1BallotCastPostResponseBody200)
                                                                                                                                                                                                             | (\status_2 -> Network.HTTP.Types.Status.statusCode status_2 GHC.Classes.== 422) (Network.HTTP.Client.Types.responseStatus response) -> CastBallotApiV1BallotCastPostResponse422 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                                                          HTTPValidationError)
-                                                                                                                                                                                                            | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Mediator.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/cast") [] (GHC.Maybe.Just body) ElectionGuard.API.Mediator.Generated.Common.RequestBodyEncodingJSON)
+                                                                                                                                                                                                            | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/cast") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/ballot/cast
 -- 
 -- The same as 'castBallotApiV1BallotCastPost' but returns the raw 'Data.ByteString.Char8.ByteString'
-castBallotApiV1BallotCastPostRaw :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                                  ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
-                                    ElectionGuard.API.Mediator.Generated.Common.Configuration s ->
+castBallotApiV1BallotCastPostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                  ElectionGuard.API.Generated.Common.SecurityScheme s) =>
+                                    ElectionGuard.API.Generated.Common.Configuration s ->
                                     AcceptBallotRequest ->
                                     m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                           (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
 castBallotApiV1BallotCastPostRaw config
-                                 body = GHC.Base.id (ElectionGuard.API.Mediator.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/cast") [] (GHC.Maybe.Just body) ElectionGuard.API.Mediator.Generated.Common.RequestBodyEncodingJSON)
+                                 body = GHC.Base.id (ElectionGuard.API.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/cast") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/ballot/cast
 -- 
--- Monadic version of 'castBallotApiV1BallotCastPost' (use with 'ElectionGuard.API.Mediator.Generated.Common.runWithConfiguration')
-castBallotApiV1BallotCastPostM :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                                ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
+-- Monadic version of 'castBallotApiV1BallotCastPost' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+castBallotApiV1BallotCastPostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                   AcceptBallotRequest ->
-                                  Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Mediator.Generated.Common.Configuration s)
+                                  Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                      m
                                                                      (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                          (Network.HTTP.Client.Types.Response CastBallotApiV1BallotCastPostResponse))
@@ -79,18 +79,18 @@ castBallotApiV1BallotCastPostM body = GHC.Base.fmap (GHC.Base.fmap (\response_3 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                           CastBallotApiV1BallotCastPostResponseBody200)
                                                                                                                                                                                                              | (\status_5 -> Network.HTTP.Types.Status.statusCode status_5 GHC.Classes.== 422) (Network.HTTP.Client.Types.responseStatus response) -> CastBallotApiV1BallotCastPostResponse422 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                                                           HTTPValidationError)
-                                                                                                                                                                                                             | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_3) response_3)) (ElectionGuard.API.Mediator.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/cast") [] (GHC.Maybe.Just body) ElectionGuard.API.Mediator.Generated.Common.RequestBodyEncodingJSON)
+                                                                                                                                                                                                             | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_3) response_3)) (ElectionGuard.API.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/cast") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/ballot/cast
 -- 
--- Monadic version of 'castBallotApiV1BallotCastPostRaw' (use with 'ElectionGuard.API.Mediator.Generated.Common.runWithConfiguration')
-castBallotApiV1BallotCastPostRawM :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                                   ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
+-- Monadic version of 'castBallotApiV1BallotCastPostRaw' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+castBallotApiV1BallotCastPostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                   ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                      AcceptBallotRequest ->
-                                     Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Mediator.Generated.Common.Configuration s)
+                                     Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                         m
                                                                         (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                             (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
-castBallotApiV1BallotCastPostRawM body = GHC.Base.id (ElectionGuard.API.Mediator.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/cast") [] (GHC.Maybe.Just body) ElectionGuard.API.Mediator.Generated.Common.RequestBodyEncodingJSON)
+castBallotApiV1BallotCastPostRawM body = GHC.Base.id (ElectionGuard.API.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/ballot/cast") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | Represents a response of the operation 'castBallotApiV1BallotCastPost'.
 -- 
 -- The response constructor is chosen by the status code of the response. If no case matches (no specific case for the response code, no range case, no default case), 'CastBallotApiV1BallotCastPostResponseError' is used.

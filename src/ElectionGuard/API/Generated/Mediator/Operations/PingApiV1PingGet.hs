@@ -39,48 +39,48 @@ import qualified Network.HTTP.Simple
 import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
-import qualified ElectionGuard.API.Mediator.Generated.Common
+import qualified ElectionGuard.API.Generated.Common
 import ElectionGuard.API.Mediator.Generated.Types
 
 -- | > GET /api/v1/ping
 -- 
 -- Ensure API can be pinged
-pingApiV1PingGet :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m, ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) => ElectionGuard.API.Mediator.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+pingApiV1PingGet :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response PingApiV1PingGetResponse)) -- ^ Monad containing the result of the operation
 pingApiV1PingGet config = GHC.Base.fmap (GHC.Base.fmap (\response_0 -> GHC.Base.fmap (Data.Either.either PingApiV1PingGetResponseError GHC.Base.id GHC.Base.. (\response body -> if | (\status_1 -> Network.HTTP.Types.Status.statusCode status_1 GHC.Classes.== 200) (Network.HTTP.Client.Types.responseStatus response) -> PingApiV1PingGetResponse200 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                     Data.Text.Internal.Text)
-                                                                                                                                                                                    | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Mediator.Generated.Common.doCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/ping") [])
+                                                                                                                                                                                    | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Generated.Common.doCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/ping") [])
 -- | > GET /api/v1/ping
 -- 
 -- The same as 'pingApiV1PingGet' but returns the raw 'Data.ByteString.Char8.ByteString'
-pingApiV1PingGetRaw :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                     ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
-                       ElectionGuard.API.Mediator.Generated.Common.Configuration s ->
+pingApiV1PingGetRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                     ElectionGuard.API.Generated.Common.SecurityScheme s) =>
+                       ElectionGuard.API.Generated.Common.Configuration s ->
                        m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                              (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
-pingApiV1PingGetRaw config = GHC.Base.id (ElectionGuard.API.Mediator.Generated.Common.doCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/ping") [])
+pingApiV1PingGetRaw config = GHC.Base.id (ElectionGuard.API.Generated.Common.doCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/ping") [])
 -- | > GET /api/v1/ping
 -- 
--- Monadic version of 'pingApiV1PingGet' (use with 'ElectionGuard.API.Mediator.Generated.Common.runWithConfiguration')
-pingApiV1PingGetM :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                   ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
-                     Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Mediator.Generated.Common.Configuration s)
+-- Monadic version of 'pingApiV1PingGet' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+pingApiV1PingGetM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                   ElectionGuard.API.Generated.Common.SecurityScheme s) =>
+                     Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                         m
                                                         (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                             (Network.HTTP.Client.Types.Response PingApiV1PingGetResponse))
 pingApiV1PingGetM = GHC.Base.fmap (GHC.Base.fmap (\response_2 -> GHC.Base.fmap (Data.Either.either PingApiV1PingGetResponseError GHC.Base.id GHC.Base.. (\response body -> if | (\status_3 -> Network.HTTP.Types.Status.statusCode status_3 GHC.Classes.== 200) (Network.HTTP.Client.Types.responseStatus response) -> PingApiV1PingGetResponse200 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                               Data.Text.Internal.Text)
-                                                                                                                                                                              | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_2) response_2)) (ElectionGuard.API.Mediator.Generated.Common.doCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/ping") [])
+                                                                                                                                                                              | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_2) response_2)) (ElectionGuard.API.Generated.Common.doCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/ping") [])
 -- | > GET /api/v1/ping
 -- 
--- Monadic version of 'pingApiV1PingGetRaw' (use with 'ElectionGuard.API.Mediator.Generated.Common.runWithConfiguration')
-pingApiV1PingGetRawM :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                      ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
-                        Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Mediator.Generated.Common.Configuration s)
+-- Monadic version of 'pingApiV1PingGetRaw' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+pingApiV1PingGetRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                      ElectionGuard.API.Generated.Common.SecurityScheme s) =>
+                        Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                            m
                                                            (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
-pingApiV1PingGetRawM = GHC.Base.id (ElectionGuard.API.Mediator.Generated.Common.doCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/ping") [])
+pingApiV1PingGetRawM = GHC.Base.id (ElectionGuard.API.Generated.Common.doCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/ping") [])
 -- | Represents a response of the operation 'pingApiV1PingGet'.
 -- 
 -- The response constructor is chosen by the status code of the response. If no case matches (no specific case for the response code, no range case, no default case), 'PingApiV1PingGetResponseError' is used.

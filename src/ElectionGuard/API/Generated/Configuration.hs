@@ -6,11 +6,11 @@
 module ElectionGuard.API.Guardian.Generated.Configuration where
 
 import qualified Data.Text
-import qualified ElectionGuard.API.Guardian.Generated.Common
+import qualified ElectionGuard.API.Generated.Common
 
 -- | The default url specified by the OpenAPI specification
 -- 
 -- @/@
 defaultURL = Data.Text.pack "/"
 -- | The default configuration containing the 'defaultURL' and no authorization
-defaultConfiguration = ElectionGuard.API.Guardian.Generated.Common.Configuration defaultURL ElectionGuard.API.Guardian.Generated.Common.AnonymousSecurityScheme
+defaultConfiguration = ElectionGuard.API.Generated.Common.Configuration defaultURL ElectionGuard.API.Generated.Common.AnonymousSecurityScheme

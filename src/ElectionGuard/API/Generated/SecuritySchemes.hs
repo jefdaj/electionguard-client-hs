@@ -11,4 +11,4 @@ import qualified GHC.Classes
 import qualified GHC.Show
 import qualified Network.HTTP.Client as Network.HTTP.Client.Request
 import qualified Network.HTTP.Simple
-import qualified ElectionGuard.API.Mediator.Generated.Common
+import qualified ElectionGuard.API.Generated.Common

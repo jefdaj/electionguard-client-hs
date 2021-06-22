@@ -39,13 +39,13 @@ import qualified Network.HTTP.Simple
 import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
-import qualified ElectionGuard.API.Guardian.Generated.Common
+import qualified ElectionGuard.API.Generated.Common
 import ElectionGuard.API.Guardian.Generated.Types
 
 -- | > POST /api/v1/guardian/challenge
 -- 
 -- Create Backup Challenge
-createBackupChallengeApiV1GuardianChallengePost :: forall m s . (ElectionGuard.API.Guardian.Generated.Common.MonadHTTP m, ElectionGuard.API.Guardian.Generated.Common.SecurityScheme s) => ElectionGuard.API.Guardian.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+createBackupChallengeApiV1GuardianChallengePost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> BackupChallengeRequest                                                                                                                                      -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response CreateBackupChallengeApiV1GuardianChallengePostResponse)) -- ^ Monad containing the result of the operation
 createBackupChallengeApiV1GuardianChallengePost config
@@ -53,25 +53,25 @@ createBackupChallengeApiV1GuardianChallengePost config
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                CreateBackupChallengeApiV1GuardianChallengePostResponseBody200)
                                                                                                                                                                                                                                                 | (\status_2 -> Network.HTTP.Types.Status.statusCode status_2 GHC.Classes.== 422) (Network.HTTP.Client.Types.responseStatus response) -> CreateBackupChallengeApiV1GuardianChallengePostResponse422 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                HTTPValidationError)
-                                                                                                                                                                                                                                                | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Guardian.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/guardian/challenge") [] (GHC.Maybe.Just body) ElectionGuard.API.Guardian.Generated.Common.RequestBodyEncodingJSON)
+                                                                                                                                                                                                                                                | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/guardian/challenge") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/guardian/challenge
 -- 
 -- The same as 'createBackupChallengeApiV1GuardianChallengePost' but returns the raw 'Data.ByteString.Char8.ByteString'
-createBackupChallengeApiV1GuardianChallengePostRaw :: forall m s . (ElectionGuard.API.Guardian.Generated.Common.MonadHTTP m,
-                                                                    ElectionGuard.API.Guardian.Generated.Common.SecurityScheme s) =>
-                                                      ElectionGuard.API.Guardian.Generated.Common.Configuration s ->
+createBackupChallengeApiV1GuardianChallengePostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                                    ElectionGuard.API.Generated.Common.SecurityScheme s) =>
+                                                      ElectionGuard.API.Generated.Common.Configuration s ->
                                                       BackupChallengeRequest ->
                                                       m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                             (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
 createBackupChallengeApiV1GuardianChallengePostRaw config
-                                                   body = GHC.Base.id (ElectionGuard.API.Guardian.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/guardian/challenge") [] (GHC.Maybe.Just body) ElectionGuard.API.Guardian.Generated.Common.RequestBodyEncodingJSON)
+                                                   body = GHC.Base.id (ElectionGuard.API.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/guardian/challenge") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/guardian/challenge
 -- 
--- Monadic version of 'createBackupChallengeApiV1GuardianChallengePost' (use with 'ElectionGuard.API.Guardian.Generated.Common.runWithConfiguration')
-createBackupChallengeApiV1GuardianChallengePostM :: forall m s . (ElectionGuard.API.Guardian.Generated.Common.MonadHTTP m,
-                                                                  ElectionGuard.API.Guardian.Generated.Common.SecurityScheme s) =>
+-- Monadic version of 'createBackupChallengeApiV1GuardianChallengePost' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+createBackupChallengeApiV1GuardianChallengePostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                                  ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                     BackupChallengeRequest ->
-                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Guardian.Generated.Common.Configuration s)
+                                                    Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                        m
                                                                                        (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                            (Network.HTTP.Client.Types.Response CreateBackupChallengeApiV1GuardianChallengePostResponse))
@@ -79,18 +79,18 @@ createBackupChallengeApiV1GuardianChallengePostM body = GHC.Base.fmap (GHC.Base.
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 CreateBackupChallengeApiV1GuardianChallengePostResponseBody200)
                                                                                                                                                                                                                                                  | (\status_5 -> Network.HTTP.Types.Status.statusCode status_5 GHC.Classes.== 422) (Network.HTTP.Client.Types.responseStatus response) -> CreateBackupChallengeApiV1GuardianChallengePostResponse422 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 HTTPValidationError)
-                                                                                                                                                                                                                                                 | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_3) response_3)) (ElectionGuard.API.Guardian.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/guardian/challenge") [] (GHC.Maybe.Just body) ElectionGuard.API.Guardian.Generated.Common.RequestBodyEncodingJSON)
+                                                                                                                                                                                                                                                 | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_3) response_3)) (ElectionGuard.API.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/guardian/challenge") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/guardian/challenge
 -- 
--- Monadic version of 'createBackupChallengeApiV1GuardianChallengePostRaw' (use with 'ElectionGuard.API.Guardian.Generated.Common.runWithConfiguration')
-createBackupChallengeApiV1GuardianChallengePostRawM :: forall m s . (ElectionGuard.API.Guardian.Generated.Common.MonadHTTP m,
-                                                                     ElectionGuard.API.Guardian.Generated.Common.SecurityScheme s) =>
+-- Monadic version of 'createBackupChallengeApiV1GuardianChallengePostRaw' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+createBackupChallengeApiV1GuardianChallengePostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                                     ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                        BackupChallengeRequest ->
-                                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Guardian.Generated.Common.Configuration s)
+                                                       Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                           m
                                                                                           (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                               (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
-createBackupChallengeApiV1GuardianChallengePostRawM body = GHC.Base.id (ElectionGuard.API.Guardian.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/guardian/challenge") [] (GHC.Maybe.Just body) ElectionGuard.API.Guardian.Generated.Common.RequestBodyEncodingJSON)
+createBackupChallengeApiV1GuardianChallengePostRawM body = GHC.Base.id (ElectionGuard.API.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/guardian/challenge") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | Represents a response of the operation 'createBackupChallengeApiV1GuardianChallengePost'.
 -- 
 -- The response constructor is chosen by the status code of the response. If no case matches (no specific case for the response code, no range case, no default case), 'CreateBackupChallengeApiV1GuardianChallengePostResponseError' is used.

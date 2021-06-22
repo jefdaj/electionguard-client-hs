@@ -31,7 +31,7 @@ module ElectionGuard.API.Guardian.Generated (
   module ElectionGuard.API.Guardian.Generated.Types.DecryptTallyShareRequest,
   module ElectionGuard.API.Guardian.Generated.Configuration,
   module ElectionGuard.API.Guardian.Generated.SecuritySchemes,
-  module ElectionGuard.API.Guardian.Generated.Common,
+  module ElectionGuard.API.Generated.Common,
   ) where
 
 import ElectionGuard.API.Guardian.Generated.Operations.DecryptBallotSharesApiV1BallotDecryptSharesPost
@@ -63,4 +63,4 @@ import ElectionGuard.API.Guardian.Generated.Types.DecryptBallotSharesRequest
 import ElectionGuard.API.Guardian.Generated.Types.DecryptTallyShareRequest
 import ElectionGuard.API.Guardian.Generated.Configuration
 import ElectionGuard.API.Guardian.Generated.SecuritySchemes
-import ElectionGuard.API.Guardian.Generated.Common
+import ElectionGuard.API.Generated.Common

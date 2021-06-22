@@ -27,7 +27,7 @@ import qualified GHC.Generics
 import qualified GHC.Int
 import qualified GHC.Show
 import qualified GHC.Types
-import qualified ElectionGuard.API.Guardian.Generated.Common
+import qualified ElectionGuard.API.Generated.Common
 import ElectionGuard.API.Guardian.Generated.Types.Guardian
 
 -- | Defines the data type for the schema DecryptBallotSharesRequest

@@ -39,48 +39,48 @@ import qualified Network.HTTP.Simple
 import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
-import qualified ElectionGuard.API.Mediator.Generated.Common
+import qualified ElectionGuard.API.Generated.Common
 import ElectionGuard.API.Mediator.Generated.Types
 
 -- | > GET /api/v1/election/constants
 -- 
 -- Return the constants defined for an election
-getElectionConstantsApiV1ElectionConstantsGet :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m, ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) => ElectionGuard.API.Mediator.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+getElectionConstantsApiV1ElectionConstantsGet :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response GetElectionConstantsApiV1ElectionConstantsGetResponse)) -- ^ Monad containing the result of the operation
 getElectionConstantsApiV1ElectionConstantsGet config = GHC.Base.fmap (GHC.Base.fmap (\response_0 -> GHC.Base.fmap (Data.Either.either GetElectionConstantsApiV1ElectionConstantsGetResponseError GHC.Base.id GHC.Base.. (\response body -> if | (\status_1 -> Network.HTTP.Types.Status.statusCode status_1 GHC.Classes.== 200) (Network.HTTP.Client.Types.responseStatus response) -> GetElectionConstantsApiV1ElectionConstantsGetResponse200 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            GetElectionConstantsApiV1ElectionConstantsGetResponseBody200)
-                                                                                                                                                                                                                                              | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Mediator.Generated.Common.doCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/election/constants") [])
+                                                                                                                                                                                                                                              | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Generated.Common.doCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/election/constants") [])
 -- | > GET /api/v1/election/constants
 -- 
 -- The same as 'getElectionConstantsApiV1ElectionConstantsGet' but returns the raw 'Data.ByteString.Char8.ByteString'
-getElectionConstantsApiV1ElectionConstantsGetRaw :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                                                  ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
-                                                    ElectionGuard.API.Mediator.Generated.Common.Configuration s ->
+getElectionConstantsApiV1ElectionConstantsGetRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                                  ElectionGuard.API.Generated.Common.SecurityScheme s) =>
+                                                    ElectionGuard.API.Generated.Common.Configuration s ->
                                                     m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                           (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
-getElectionConstantsApiV1ElectionConstantsGetRaw config = GHC.Base.id (ElectionGuard.API.Mediator.Generated.Common.doCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/election/constants") [])
+getElectionConstantsApiV1ElectionConstantsGetRaw config = GHC.Base.id (ElectionGuard.API.Generated.Common.doCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/election/constants") [])
 -- | > GET /api/v1/election/constants
 -- 
--- Monadic version of 'getElectionConstantsApiV1ElectionConstantsGet' (use with 'ElectionGuard.API.Mediator.Generated.Common.runWithConfiguration')
-getElectionConstantsApiV1ElectionConstantsGetM :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                                                ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
-                                                  Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Mediator.Generated.Common.Configuration s)
+-- Monadic version of 'getElectionConstantsApiV1ElectionConstantsGet' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+getElectionConstantsApiV1ElectionConstantsGetM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                                ElectionGuard.API.Generated.Common.SecurityScheme s) =>
+                                                  Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                      m
                                                                                      (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                          (Network.HTTP.Client.Types.Response GetElectionConstantsApiV1ElectionConstantsGetResponse))
 getElectionConstantsApiV1ElectionConstantsGetM = GHC.Base.fmap (GHC.Base.fmap (\response_2 -> GHC.Base.fmap (Data.Either.either GetElectionConstantsApiV1ElectionConstantsGetResponseError GHC.Base.id GHC.Base.. (\response body -> if | (\status_3 -> Network.HTTP.Types.Status.statusCode status_3 GHC.Classes.== 200) (Network.HTTP.Client.Types.responseStatus response) -> GetElectionConstantsApiV1ElectionConstantsGetResponse200 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      GetElectionConstantsApiV1ElectionConstantsGetResponseBody200)
-                                                                                                                                                                                                                                        | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_2) response_2)) (ElectionGuard.API.Mediator.Generated.Common.doCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/election/constants") [])
+                                                                                                                                                                                                                                        | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_2) response_2)) (ElectionGuard.API.Generated.Common.doCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/election/constants") [])
 -- | > GET /api/v1/election/constants
 -- 
--- Monadic version of 'getElectionConstantsApiV1ElectionConstantsGetRaw' (use with 'ElectionGuard.API.Mediator.Generated.Common.runWithConfiguration')
-getElectionConstantsApiV1ElectionConstantsGetRawM :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                                                   ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
-                                                     Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Mediator.Generated.Common.Configuration s)
+-- Monadic version of 'getElectionConstantsApiV1ElectionConstantsGetRaw' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+getElectionConstantsApiV1ElectionConstantsGetRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                                   ElectionGuard.API.Generated.Common.SecurityScheme s) =>
+                                                     Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                         m
                                                                                         (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                             (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
-getElectionConstantsApiV1ElectionConstantsGetRawM = GHC.Base.id (ElectionGuard.API.Mediator.Generated.Common.doCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/election/constants") [])
+getElectionConstantsApiV1ElectionConstantsGetRawM = GHC.Base.id (ElectionGuard.API.Generated.Common.doCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack "/api/v1/election/constants") [])
 -- | Represents a response of the operation 'getElectionConstantsApiV1ElectionConstantsGet'.
 -- 
 -- The response constructor is chosen by the status code of the response. If no case matches (no specific case for the response code, no range case, no default case), 'GetElectionConstantsApiV1ElectionConstantsGetResponseError' is used.

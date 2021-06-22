@@ -32,7 +32,7 @@ module ElectionGuard.API.Mediator.Generated (
   module ElectionGuard.API.Mediator.Generated.Types.HTTPValidationError,
   module ElectionGuard.API.Mediator.Generated.Configuration,
   module ElectionGuard.API.Mediator.Generated.SecuritySchemes,
-  module ElectionGuard.API.Mediator.Generated.Common,
+  module ElectionGuard.API.Generated.Common,
   ) where
 
 import ElectionGuard.API.Mediator.Generated.Operations.CastBallotApiV1BallotCastPost
@@ -65,4 +65,4 @@ import ElectionGuard.API.Mediator.Generated.Types.ValidationError
 import ElectionGuard.API.Mediator.Generated.Types.HTTPValidationError
 import ElectionGuard.API.Mediator.Generated.Configuration
 import ElectionGuard.API.Mediator.Generated.SecuritySchemes
-import ElectionGuard.API.Mediator.Generated.Common
+import ElectionGuard.API.Generated.Common

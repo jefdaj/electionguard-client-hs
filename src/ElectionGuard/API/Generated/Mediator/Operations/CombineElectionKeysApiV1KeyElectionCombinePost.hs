@@ -39,14 +39,14 @@ import qualified Network.HTTP.Simple
 import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
-import qualified ElectionGuard.API.Mediator.Generated.Common
+import qualified ElectionGuard.API.Generated.Common
 import ElectionGuard.API.Mediator.Generated.Types
 
 -- | > POST /api/v1/key/election/combine
 -- 
 -- Combine public election keys into a final one
 -- :return: Combine Election key
-combineElectionKeysApiV1KeyElectionCombinePost :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m, ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) => ElectionGuard.API.Mediator.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+combineElectionKeysApiV1KeyElectionCombinePost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> CombineElectionKeysRequest                                                                                                                                 -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response CombineElectionKeysApiV1KeyElectionCombinePostResponse)) -- ^ Monad containing the result of the operation
 combineElectionKeysApiV1KeyElectionCombinePost config
@@ -54,25 +54,25 @@ combineElectionKeysApiV1KeyElectionCombinePost config
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ElectionJointKey)
                                                                                                                                                                                                                                               | (\status_2 -> Network.HTTP.Types.Status.statusCode status_2 GHC.Classes.== 422) (Network.HTTP.Client.Types.responseStatus response) -> CombineElectionKeysApiV1KeyElectionCombinePostResponse422 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             HTTPValidationError)
-                                                                                                                                                                                                                                              | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Mediator.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/key/election/combine") [] (GHC.Maybe.Just body) ElectionGuard.API.Mediator.Generated.Common.RequestBodyEncodingJSON)
+                                                                                                                                                                                                                                              | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/key/election/combine") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/key/election/combine
 -- 
 -- The same as 'combineElectionKeysApiV1KeyElectionCombinePost' but returns the raw 'Data.ByteString.Char8.ByteString'
-combineElectionKeysApiV1KeyElectionCombinePostRaw :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                                                   ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
-                                                     ElectionGuard.API.Mediator.Generated.Common.Configuration s ->
+combineElectionKeysApiV1KeyElectionCombinePostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                                   ElectionGuard.API.Generated.Common.SecurityScheme s) =>
+                                                     ElectionGuard.API.Generated.Common.Configuration s ->
                                                      CombineElectionKeysRequest ->
                                                      m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                            (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
 combineElectionKeysApiV1KeyElectionCombinePostRaw config
-                                                  body = GHC.Base.id (ElectionGuard.API.Mediator.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/key/election/combine") [] (GHC.Maybe.Just body) ElectionGuard.API.Mediator.Generated.Common.RequestBodyEncodingJSON)
+                                                  body = GHC.Base.id (ElectionGuard.API.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/key/election/combine") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/key/election/combine
 -- 
--- Monadic version of 'combineElectionKeysApiV1KeyElectionCombinePost' (use with 'ElectionGuard.API.Mediator.Generated.Common.runWithConfiguration')
-combineElectionKeysApiV1KeyElectionCombinePostM :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                                                 ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
+-- Monadic version of 'combineElectionKeysApiV1KeyElectionCombinePost' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+combineElectionKeysApiV1KeyElectionCombinePostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                                 ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                    CombineElectionKeysRequest ->
-                                                   Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Mediator.Generated.Common.Configuration s)
+                                                   Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                       m
                                                                                       (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                           (Network.HTTP.Client.Types.Response CombineElectionKeysApiV1KeyElectionCombinePostResponse))
@@ -80,18 +80,18 @@ combineElectionKeysApiV1KeyElectionCombinePostM body = GHC.Base.fmap (GHC.Base.f
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ElectionJointKey)
                                                                                                                                                                                                                                                | (\status_5 -> Network.HTTP.Types.Status.statusCode status_5 GHC.Classes.== 422) (Network.HTTP.Client.Types.responseStatus response) -> CombineElectionKeysApiV1KeyElectionCombinePostResponse422 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              HTTPValidationError)
-                                                                                                                                                                                                                                               | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_3) response_3)) (ElectionGuard.API.Mediator.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/key/election/combine") [] (GHC.Maybe.Just body) ElectionGuard.API.Mediator.Generated.Common.RequestBodyEncodingJSON)
+                                                                                                                                                                                                                                               | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_3) response_3)) (ElectionGuard.API.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/key/election/combine") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/key/election/combine
 -- 
--- Monadic version of 'combineElectionKeysApiV1KeyElectionCombinePostRaw' (use with 'ElectionGuard.API.Mediator.Generated.Common.runWithConfiguration')
-combineElectionKeysApiV1KeyElectionCombinePostRawM :: forall m s . (ElectionGuard.API.Mediator.Generated.Common.MonadHTTP m,
-                                                                    ElectionGuard.API.Mediator.Generated.Common.SecurityScheme s) =>
+-- Monadic version of 'combineElectionKeysApiV1KeyElectionCombinePostRaw' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+combineElectionKeysApiV1KeyElectionCombinePostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                                    ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                                       CombineElectionKeysRequest ->
-                                                      Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Mediator.Generated.Common.Configuration s)
+                                                      Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                          m
                                                                                          (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                              (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
-combineElectionKeysApiV1KeyElectionCombinePostRawM body = GHC.Base.id (ElectionGuard.API.Mediator.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/key/election/combine") [] (GHC.Maybe.Just body) ElectionGuard.API.Mediator.Generated.Common.RequestBodyEncodingJSON)
+combineElectionKeysApiV1KeyElectionCombinePostRawM body = GHC.Base.id (ElectionGuard.API.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/key/election/combine") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | Represents a response of the operation 'combineElectionKeysApiV1KeyElectionCombinePost'.
 -- 
 -- The response constructor is chosen by the status code of the response. If no case matches (no specific case for the response code, no range case, no default case), 'CombineElectionKeysApiV1KeyElectionCombinePostResponseError' is used.

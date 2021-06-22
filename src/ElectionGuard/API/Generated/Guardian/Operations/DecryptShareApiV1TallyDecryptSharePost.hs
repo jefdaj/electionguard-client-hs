@@ -39,13 +39,13 @@ import qualified Network.HTTP.Simple
 import qualified Network.HTTP.Types
 import qualified Network.HTTP.Types as Network.HTTP.Types.Status
 import qualified Network.HTTP.Types as Network.HTTP.Types.URI
-import qualified ElectionGuard.API.Guardian.Generated.Common
+import qualified ElectionGuard.API.Generated.Common
 import ElectionGuard.API.Guardian.Generated.Types
 
 -- | > POST /api/v1/tally/decrypt-share
 -- 
 -- Decrypt a single guardian\'s share of a tally
-decryptShareApiV1TallyDecryptSharePost :: forall m s . (ElectionGuard.API.Guardian.Generated.Common.MonadHTTP m, ElectionGuard.API.Guardian.Generated.Common.SecurityScheme s) => ElectionGuard.API.Guardian.Generated.Common.Configuration s  -- ^ The configuration to use in the request
+decryptShareApiV1TallyDecryptSharePost :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m, ElectionGuard.API.Generated.Common.SecurityScheme s) => ElectionGuard.API.Generated.Common.Configuration s  -- ^ The configuration to use in the request
   -> DecryptTallyShareRequest                                                                                                                           -- ^ The request body to send
   -> m (Data.Either.Either Network.HTTP.Client.Types.HttpException (Network.HTTP.Client.Types.Response DecryptShareApiV1TallyDecryptSharePostResponse)) -- ^ Monad containing the result of the operation
 decryptShareApiV1TallyDecryptSharePost config
@@ -53,25 +53,25 @@ decryptShareApiV1TallyDecryptSharePost config
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     DecryptShareApiV1TallyDecryptSharePostResponseBody200)
                                                                                                                                                                                                                               | (\status_2 -> Network.HTTP.Types.Status.statusCode status_2 GHC.Classes.== 422) (Network.HTTP.Client.Types.responseStatus response) -> DecryptShareApiV1TallyDecryptSharePostResponse422 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     HTTPValidationError)
-                                                                                                                                                                                                                              | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Guardian.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/tally/decrypt-share") [] (GHC.Maybe.Just body) ElectionGuard.API.Guardian.Generated.Common.RequestBodyEncodingJSON)
+                                                                                                                                                                                                                              | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_0) response_0)) (ElectionGuard.API.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/tally/decrypt-share") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/tally/decrypt-share
 -- 
 -- The same as 'decryptShareApiV1TallyDecryptSharePost' but returns the raw 'Data.ByteString.Char8.ByteString'
-decryptShareApiV1TallyDecryptSharePostRaw :: forall m s . (ElectionGuard.API.Guardian.Generated.Common.MonadHTTP m,
-                                                           ElectionGuard.API.Guardian.Generated.Common.SecurityScheme s) =>
-                                             ElectionGuard.API.Guardian.Generated.Common.Configuration s ->
+decryptShareApiV1TallyDecryptSharePostRaw :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                           ElectionGuard.API.Generated.Common.SecurityScheme s) =>
+                                             ElectionGuard.API.Generated.Common.Configuration s ->
                                              DecryptTallyShareRequest ->
                                              m (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                    (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
 decryptShareApiV1TallyDecryptSharePostRaw config
-                                          body = GHC.Base.id (ElectionGuard.API.Guardian.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/tally/decrypt-share") [] (GHC.Maybe.Just body) ElectionGuard.API.Guardian.Generated.Common.RequestBodyEncodingJSON)
+                                          body = GHC.Base.id (ElectionGuard.API.Generated.Common.doBodyCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/tally/decrypt-share") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/tally/decrypt-share
 -- 
--- Monadic version of 'decryptShareApiV1TallyDecryptSharePost' (use with 'ElectionGuard.API.Guardian.Generated.Common.runWithConfiguration')
-decryptShareApiV1TallyDecryptSharePostM :: forall m s . (ElectionGuard.API.Guardian.Generated.Common.MonadHTTP m,
-                                                         ElectionGuard.API.Guardian.Generated.Common.SecurityScheme s) =>
+-- Monadic version of 'decryptShareApiV1TallyDecryptSharePost' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+decryptShareApiV1TallyDecryptSharePostM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                         ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                            DecryptTallyShareRequest ->
-                                           Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Guardian.Generated.Common.Configuration s)
+                                           Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                               m
                                                                               (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                   (Network.HTTP.Client.Types.Response DecryptShareApiV1TallyDecryptSharePostResponse))
@@ -79,18 +79,18 @@ decryptShareApiV1TallyDecryptSharePostM body = GHC.Base.fmap (GHC.Base.fmap (\re
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      DecryptShareApiV1TallyDecryptSharePostResponseBody200)
                                                                                                                                                                                                                                | (\status_5 -> Network.HTTP.Types.Status.statusCode status_5 GHC.Classes.== 422) (Network.HTTP.Client.Types.responseStatus response) -> DecryptShareApiV1TallyDecryptSharePostResponse422 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      HTTPValidationError)
-                                                                                                                                                                                                                               | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_3) response_3)) (ElectionGuard.API.Guardian.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/tally/decrypt-share") [] (GHC.Maybe.Just body) ElectionGuard.API.Guardian.Generated.Common.RequestBodyEncodingJSON)
+                                                                                                                                                                                                                               | GHC.Base.otherwise -> Data.Either.Left "Missing default response type") response_3) response_3)) (ElectionGuard.API.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/tally/decrypt-share") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | > POST /api/v1/tally/decrypt-share
 -- 
--- Monadic version of 'decryptShareApiV1TallyDecryptSharePostRaw' (use with 'ElectionGuard.API.Guardian.Generated.Common.runWithConfiguration')
-decryptShareApiV1TallyDecryptSharePostRawM :: forall m s . (ElectionGuard.API.Guardian.Generated.Common.MonadHTTP m,
-                                                            ElectionGuard.API.Guardian.Generated.Common.SecurityScheme s) =>
+-- Monadic version of 'decryptShareApiV1TallyDecryptSharePostRaw' (use with 'ElectionGuard.API.Generated.Common.runWithConfiguration')
+decryptShareApiV1TallyDecryptSharePostRawM :: forall m s . (ElectionGuard.API.Generated.Common.MonadHTTP m,
+                                                            ElectionGuard.API.Generated.Common.SecurityScheme s) =>
                                               DecryptTallyShareRequest ->
-                                              Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Guardian.Generated.Common.Configuration s)
+                                              Control.Monad.Trans.Reader.ReaderT (ElectionGuard.API.Generated.Common.Configuration s)
                                                                                  m
                                                                                  (Data.Either.Either Network.HTTP.Client.Types.HttpException
                                                                                                      (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString))
-decryptShareApiV1TallyDecryptSharePostRawM body = GHC.Base.id (ElectionGuard.API.Guardian.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/tally/decrypt-share") [] (GHC.Maybe.Just body) ElectionGuard.API.Guardian.Generated.Common.RequestBodyEncodingJSON)
+decryptShareApiV1TallyDecryptSharePostRawM body = GHC.Base.id (ElectionGuard.API.Generated.Common.doBodyCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "POST") (Data.Text.pack "/api/v1/tally/decrypt-share") [] (GHC.Maybe.Just body) ElectionGuard.API.Generated.Common.RequestBodyEncodingJSON)
 -- | Represents a response of the operation 'decryptShareApiV1TallyDecryptSharePost'.
 -- 
 -- The response constructor is chosen by the status code of the response. If no case matches (no specific case for the response code, no range case, no default case), 'DecryptShareApiV1TallyDecryptSharePostResponseError' is used.
