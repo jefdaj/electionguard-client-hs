@@ -30,7 +30,7 @@ library
       Lib
 
       -- all handwritten code is in these modules
-      ElectionGuard.API.Config
+      -- ElectionGuard.API.Config
       -- ElectionGuard.API.Types
       ElectionGuard.API.Guardian
       ElectionGuard.API.Mediator
