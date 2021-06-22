@@ -21,6 +21,19 @@ description:         Please see the README on GitHub at <https://github.com/jefd
 
 dependencies:
 - base >= 4.7 && < 5
+- aeson
+- bytestring
+- ghc-prim
+- http-client
+- http-conduit
+- http-types
+- mtl
+- scientific
+- text
+- time
+- transformers
+- unordered-containers
+- vector
 
 library:
   source-dirs: src
@@ -35,6 +48,19 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - electionguard-client
+    - aeson
+    - bytestring
+    - ghc-prim
+    - http-client
+    - http-conduit
+    - http-types
+    - mtl
+    - scientific
+    - text
+    - time
+    - transformers
+    - unordered-containers
+    - vector
 
 tests:
   electionguard-client-test:
@@ -45,4 +71,17 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
+    - aeson
+    - bytestring
+    - ghc-prim
+    - http-client
+    - http-conduit
+    - http-types
+    - mtl
+    - scientific
+    - text
+    - time
+    - transformers
+    - unordered-containers
+    - vector
     - electionguard-client

@@ -25,6 +25,69 @@ source-repository head
 
 library
   exposed-modules:
+      ElectionGuard.API.Guardian.Generated
+      ElectionGuard.API.Guardian.Generated.Common
+      ElectionGuard.API.Guardian.Generated.Configuration
+      ElectionGuard.API.Guardian.Generated.CyclicTypes
+      ElectionGuard.API.Guardian.Generated.Operations.CreateBackupChallengeApiV1GuardianChallengePost
+      ElectionGuard.API.Guardian.Generated.Operations.CreateGuardianApiV1GuardianPost
+      ElectionGuard.API.Guardian.Generated.Operations.CreateGuardianBackupApiV1GuardianBackupPost
+      ElectionGuard.API.Guardian.Generated.Operations.DecryptBallotSharesApiV1BallotDecryptSharesPost
+      ElectionGuard.API.Guardian.Generated.Operations.DecryptShareApiV1TallyDecryptSharePost
+      ElectionGuard.API.Guardian.Generated.Operations.GenerateAuxiliaryKeysApiV1KeyAuxiliaryGeneratePost
+      ElectionGuard.API.Guardian.Generated.Operations.GenerateElectionKeysApiV1KeyElectionGeneratePost
+      ElectionGuard.API.Guardian.Generated.Operations.PingApiV1PingGet
+      ElectionGuard.API.Guardian.Generated.Operations.VerifyBackupApiV1GuardianBackupVerifyPost
+      ElectionGuard.API.Guardian.Generated.Operations.VerifyChallengeApiV1GuardianChallengeVerifyPost
+      ElectionGuard.API.Guardian.Generated.SecuritySchemes
+      ElectionGuard.API.Guardian.Generated.Types
+      ElectionGuard.API.Guardian.Generated.Types.AuxiliaryKeyPair
+      ElectionGuard.API.Guardian.Generated.Types.AuxiliaryPublicKey
+      ElectionGuard.API.Guardian.Generated.Types.BackupChallengeRequest
+      ElectionGuard.API.Guardian.Generated.Types.BackupVerificationRequest
+      ElectionGuard.API.Guardian.Generated.Types.ChallengeVerificationRequest
+      ElectionGuard.API.Guardian.Generated.Types.DecryptBallotSharesRequest
+      ElectionGuard.API.Guardian.Generated.Types.DecryptTallyShareRequest
+      ElectionGuard.API.Guardian.Generated.Types.ElectionKeyPair
+      ElectionGuard.API.Guardian.Generated.Types.ElectionKeyPairRequest
+      ElectionGuard.API.Guardian.Generated.Types.Guardian
+      ElectionGuard.API.Guardian.Generated.Types.GuardianBackup
+      ElectionGuard.API.Guardian.Generated.Types.GuardianBackupRequest
+      ElectionGuard.API.Guardian.Generated.Types.GuardianRequest
+      ElectionGuard.API.Guardian.Generated.Types.HTTPValidationError
+      ElectionGuard.API.Guardian.Generated.Types.ValidationError
+      ElectionGuard.API.Mediator.Generated
+      ElectionGuard.API.Mediator.Generated.Common
+      ElectionGuard.API.Mediator.Generated.Configuration
+      ElectionGuard.API.Mediator.Generated.CyclicTypes
+      ElectionGuard.API.Mediator.Generated.Operations.AppendToTallyApiV1TallyAppendPost
+      ElectionGuard.API.Mediator.Generated.Operations.BuildElectionContextApiV1ElectionContextPost
+      ElectionGuard.API.Mediator.Generated.Operations.CastBallotApiV1BallotCastPost
+      ElectionGuard.API.Mediator.Generated.Operations.CombineElectionKeysApiV1KeyElectionCombinePost
+      ElectionGuard.API.Mediator.Generated.Operations.ConvertTrackerToWordsApiV1TrackerWordsPost
+      ElectionGuard.API.Mediator.Generated.Operations.DecryptBallotsApiV1BallotDecryptPost
+      ElectionGuard.API.Mediator.Generated.Operations.DecryptTallyApiV1TallyDecryptPost
+      ElectionGuard.API.Mediator.Generated.Operations.EncryptBallotsApiV1BallotEncryptPost
+      ElectionGuard.API.Mediator.Generated.Operations.GetElectionConstantsApiV1ElectionConstantsGet
+      ElectionGuard.API.Mediator.Generated.Operations.PingApiV1PingGet
+      ElectionGuard.API.Mediator.Generated.Operations.SpoilBallotApiV1BallotSpoilPost
+      ElectionGuard.API.Mediator.Generated.Operations.StartTallyApiV1TallyPost
+      ElectionGuard.API.Mediator.Generated.Operations.ValidateElectionDescriptionApiV1ElectionValidateDescriptionPost
+      ElectionGuard.API.Mediator.Generated.SecuritySchemes
+      ElectionGuard.API.Mediator.Generated.Types
+      ElectionGuard.API.Mediator.Generated.Types.AcceptBallotRequest
+      ElectionGuard.API.Mediator.Generated.Types.AppendTallyRequest
+      ElectionGuard.API.Mediator.Generated.Types.CombineElectionKeysRequest
+      ElectionGuard.API.Mediator.Generated.Types.DecryptBallotsRequest
+      ElectionGuard.API.Mediator.Generated.Types.DecryptTallyRequest
+      ElectionGuard.API.Mediator.Generated.Types.ElectionContextRequest
+      ElectionGuard.API.Mediator.Generated.Types.ElectionJointKey
+      ElectionGuard.API.Mediator.Generated.Types.EncryptBallotsRequest
+      ElectionGuard.API.Mediator.Generated.Types.HTTPValidationError
+      ElectionGuard.API.Mediator.Generated.Types.StartTallyRequest
+      ElectionGuard.API.Mediator.Generated.Types.TrackerWordsRequest
+      ElectionGuard.API.Mediator.Generated.Types.ValidateElectionDescriptionRequest
+      ElectionGuard.API.Mediator.Generated.Types.ValidationError
       Lib
   other-modules:
       Paths_electionguard_client
@@ -32,6 +95,19 @@ library
       src
   build-depends:
       base >=4.7 && <5
+    , aeson
+    , bytestring
+    , ghc-prim
+    , http-client
+    , http-conduit
+    , http-types
+    , mtl
+    , scientific
+    , text
+    , time
+    , transformers
+    , unordered-containers
+    , vector
   default-language: Haskell2010
 
 executable electionguard-client-exe
@@ -43,7 +119,19 @@ executable electionguard-client-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , electionguard-client
+    , aeson
+    , bytestring
+    , ghc-prim
+    , http-client
+    , http-conduit
+    , http-types
+    , mtl
+    , scientific
+    , text
+    , time
+    , transformers
+    , unordered-containers
+    , vector
   default-language: Haskell2010
 
 test-suite electionguard-client-test
@@ -56,5 +144,17 @@ test-suite electionguard-client-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , electionguard-client
+    , aeson
+    , bytestring
+    , ghc-prim
+    , http-client
+    , http-conduit
+    , http-types
+    , mtl
+    , scientific
+    , text
+    , time
+    , transformers
+    , unordered-containers
+    , vector
   default-language: Haskell2010
