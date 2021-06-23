@@ -6,12 +6,20 @@ module Main where
 import ElectionGuard.API
 
 import Control.Monad.IO.Class (liftIO)
+import qualified Data.Text as T
+
+type Port = Int
+
+localHostConfig :: Port -> Configuration AnonymousSecurityScheme
+localHostConfig port = Configuration addr AnonymousSecurityScheme
+  where
+    addr = T.pack $ "http://localHost:" ++ show port
 
 localGuardian :: Configuration AnonymousSecurityScheme
-localGuardian = Configuration "http://localhost:8001" AnonymousSecurityScheme
+localGuardian = localHostConfig 8001
 
 localMediator :: Configuration AnonymousSecurityScheme
-localMediator = Configuration "http://localhost:8002" AnonymousSecurityScheme
+localMediator = localHostConfig 8002
 
 main :: IO ()
 main = do
