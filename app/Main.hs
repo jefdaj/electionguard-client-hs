@@ -7,18 +7,18 @@ import ElectionGuard.API
 
 import Control.Monad.IO.Class (liftIO)
 
-localGuardianConfig :: Configuration AnonymousSecurityScheme
-localGuardianConfig = Configuration "http://localhost:8001" AnonymousSecurityScheme
+localGuardian :: Configuration AnonymousSecurityScheme
+localGuardian = Configuration "http://localhost:8001" AnonymousSecurityScheme
 
-localMediatorConfig :: Configuration AnonymousSecurityScheme
-localMediatorConfig = Configuration "http://localhost:8002" AnonymousSecurityScheme
+localMediator :: Configuration AnonymousSecurityScheme
+localMediator = Configuration "http://localhost:8002" AnonymousSecurityScheme
 
 main :: IO ()
 main = do
   -- TODO make sure the docker containers are running in this script?
 
   -- TODO include http error handling in the monad to clean this up
-  runWithConfiguration localGuardianConfig $ do
+  runWithConfiguration localGuardian $ do
     liftIO $ putStr $ "pinging local guardian... "
     res <- ping
     liftIO $ putStrLn $ case res of
@@ -27,7 +27,7 @@ main = do
     return ()
 
   -- TODO include http error handling in the monad to clean this up
-  runWithConfiguration localMediatorConfig $ do
+  runWithConfiguration localMediator $ do
     liftIO $ putStr $ "pinging local mediator... "
     res <- ping
     liftIO $ putStrLn $ case res of
