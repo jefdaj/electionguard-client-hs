@@ -2,23 +2,22 @@
 
 module Main where
 
--- import Lib
 import ElectionGuard.API
-
 import Control.Monad.IO.Class (liftIO)
 import qualified Data.Text as T
 
-type Port = Int
+type Port   = Int
+type Config = Configuration AnonymousSecurityScheme
 
-localHostConfig :: Port -> Configuration AnonymousSecurityScheme
+localHostConfig :: Port -> Config
 localHostConfig port = Configuration addr AnonymousSecurityScheme
   where
     addr = T.pack $ "http://localHost:" ++ show port
 
-localGuardian :: Configuration AnonymousSecurityScheme
+localGuardian :: Config
 localGuardian = localHostConfig 8001
 
-localMediator :: Configuration AnonymousSecurityScheme
+localMediator :: Config
 localMediator = localHostConfig 8002
 
 main :: IO ()
