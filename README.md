@@ -39,15 +39,15 @@ Then you can run `cabal` commands inside `nix-shell` like this:
 
 ```
 $ nix-shell
-[nix-shell]$ cabal repl
-[nix-shell]$ cabal run electionguard-client-exe
-[nix-shell]$ cabal run electionguard-client-test
+[nix-shell]$ cabal v2-repl
+[nix-shell]$ cabal v2-run electionguard-client-exe
+[nix-shell]$ cabal v2-run electionguard-client-test
 ```
 
 Or like this:
 
 ```
-$ nix-shell --run 'cabal repl'
-$ nix-shell --run 'cabal run electionguard-client-exe'
-$ nix-shell --run 'cabal run electionguard-client-test'
+$ nix-shell --run 'cabal v2-repl'
+$ nix-shell --run 'cabal v2-run electionguard-client-exe'
+$ nix-shell --run 'cabal v2-run electionguard-client-test'
 ```
