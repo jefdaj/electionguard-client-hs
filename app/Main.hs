@@ -9,16 +9,18 @@ import qualified Data.Text as T
 type Port   = Int
 type Config = Configuration AnonymousSecurityScheme
 
-localHostConfig :: Port -> Config
-localHostConfig port = Configuration addr AnonymousSecurityScheme
+localConfig :: Port -> Config
+localConfig port = Configuration addr AnonymousSecurityScheme
   where
-    addr = T.pack $ "http://localHost:" ++ show port
+    addr = T.pack $ "http://localhost:" ++ show port
 
+-- use whatever port you set in docker.sh here
 localGuardian :: Config
-localGuardian = localHostConfig 8001
+localGuardian = localConfig 8001
 
+-- use whatever port you set in docker.sh here
 localMediator :: Config
-localMediator = localHostConfig 8002
+localMediator = localConfig 8002
 
 main :: IO ()
 main = do
