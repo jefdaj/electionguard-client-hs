@@ -1,3 +1,5 @@
+try to translate the python unit tests into haskell using the api
+
 re-export common stuff to deduplicate:
   ping
   Common.hs
@@ -28,5 +30,3 @@ re-export simpler versions of mediator operations:
   spoilBallot
   startTally
   validateElectionDescription
-
-try to translate the python unit tests into haskell using the api
