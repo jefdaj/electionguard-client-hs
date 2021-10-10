@@ -1,4 +1,7 @@
-try to translate the python unit tests into haskell using the api
+basic organization:
+  translate current Main.hs code to Spec.hs
+    start docker containers, or assume they'll already be going?
+  start Docopt-based CLI in Main.hs instead
 
 re-export common stuff to deduplicate:
   ping
@@ -30,3 +33,5 @@ re-export simpler versions of mediator operations:
   spoilBallot
   startTally
   validateElectionDescription
+
+try to translate the python unit tests into haskell using the api
