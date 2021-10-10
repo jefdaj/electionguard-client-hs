@@ -27,7 +27,7 @@ main = do
   -- TODO make sure the docker containers are running in this script?
 
   -- TODO include http error handling in the monad to clean this up
-  runWithConfiguration localGuardian $ do
+  runElectionT localGuardian $ do
     liftIO $ putStr $ "pinging local guardian... "
     res <- ping
     liftIO $ putStrLn $ case res of
@@ -36,7 +36,7 @@ main = do
     return ()
 
   -- TODO include http error handling in the monad to clean this up
-  runWithConfiguration localMediator $ do
+  runElectionT localMediator $ do
     liftIO $ putStr $ "pinging local mediator... "
     res <- ping
     liftIO $ putStrLn $ case res of

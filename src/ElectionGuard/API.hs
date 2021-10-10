@@ -8,7 +8,6 @@ module ElectionGuard.API
   , doCallWithConfigurationM
   , doBodyCallWithConfiguration
   , doBodyCallWithConfigurationM
-  , runWithConfiguration
   , MonadHTTP (..)
   , stringifyModel
   , StringifyModel
@@ -31,6 +30,8 @@ module ElectionGuard.API
   , module ElectionGuard.API.Mediator
 
   -- defined here
+  , ElectionT(..)
+  , runElectionT
   , ping
   , PingResponse
   )
@@ -55,7 +56,10 @@ import Control.Monad.Trans.Reader (ReaderT)
 type PingResponse = Response PingApiV1PingGetResponse
 
 -- TODO monad stack based on the ReaderT Configuration thing
--- type ElectionT s = ReaderT (Configuration s)
+type ElectionT s = ReaderT (Configuration s)
+
+runElectionT :: SecurityScheme s => Configuration s -> ElectionT s m a -> m a
+runElectionT = runWithConfiguration
 
 ping :: forall m s . (MonadHTTP m, SecurityScheme s) => ReaderT (Configuration s) m (Either HttpException PingResponse)
 ping = pingApiV1PingGetM
