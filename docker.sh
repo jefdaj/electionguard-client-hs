@@ -31,7 +31,7 @@ ensure-container-running electionguard-mediator mediator 8002
 
 ensure-json-generated() {
   name="$1"; port="$2"
-  filename="generated/${name}.json"
+  filename="openapi/${name}.json"
   [[ -a "$filename" ]] && echo "$filename already exists" && return
   mkdir -p "$(dirname "$filename")"
   curl -s "http://localhost:${port}/api/v1/openapi.json" | jq . > "$filename"
