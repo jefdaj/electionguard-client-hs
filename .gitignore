@@ -1,3 +1,4 @@
 *.sw*
 dist-newstyle/
 generated/*.log
+.stack-work/

@@ -1,0 +1,5 @@
+resolver: lts-16.27
+system-ghc: true
+skip-ghc-check: true
+packages:
+- '.'
