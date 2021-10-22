@@ -1,0 +1,41 @@
+digraph exampleelection {
+
+  subgraph cluster1toyceremony {
+    some_secret_value -> ElGamalKeyPair
+  }
+
+  // TODO wait this actually comes before 0 right?
+  subgraph cluster1ceremony {
+    label="Key ceremony"
+  }
+
+  subgraph cluster0configure {
+    label="Configure election"
+    manifest [label="election-manifest.json"]
+    ElectionBuilder
+    manifest -> ElectionBuilder
+    CiphertextElectionContext
+    InternalElectionDescription
+  }
+
+  subgraph cluster2encryptballots {
+    label="Encrypt ballots"
+    PlaintextBallot
+  }
+
+  subgraph cluster3castspoil {
+    label="Cast and Spoil"
+  }
+
+  subgraph cluster3tally {
+    label="Tally"
+  }
+
+  subgraph cluster4decrypttally {
+    label="Decrypt Tally"
+  }
+
+  subgraph cluster5publishverify {
+    label="Publish and Verify"
+  }
+}
