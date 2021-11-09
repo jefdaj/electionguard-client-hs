@@ -3,6 +3,10 @@ let
   sources = import ./nix/sources.nix {};
   nixpkgs = import sources.nixpkgs {};
 
+  # common JSON config file for nix + haskell code
+  # TODO is this the best way to do it?
+  testConfig = builtins.fromJSON (builtins.readFile ./test-config.json);
+
   mkApiVm = mode: port: {
 
     # service.image = "electionguard/electionguard-web-api:latest";
@@ -29,13 +33,11 @@ let
   mkApiVmAttrList = mode: startPort: nVms: map (mkApiVmAttrs mode startPort) (nixpkgs.lib.range 1 nVms);
 
   # make the entire services attrset
-  # the start ports are arbitrary but should match the haskell code
-  # TODO load both from a common test config file
-  mkServices = nGuardians: nMediators:
-    builtins.listToAttrs (mkApiVmAttrList "guardian" 8100 nGuardians) //
-    builtins.listToAttrs (mkApiVmAttrList "mediator" 8200 nMediators);
+  # the start ports are arbitrary
+  mkServices = cfg:
+    builtins.listToAttrs (mkApiVmAttrList "guardian" cfg.guardianStartPort cfg.nGuardians) //
+    builtins.listToAttrs (mkApiVmAttrList "mediator" cfg.mediatorStartPort cfg.nMediators);
 
 in {
-  # TODO get n guardians + mediators from somewhere?
-  services = mkServices 3 2;
+  services = mkServices testConfig;
 }
