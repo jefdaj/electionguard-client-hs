@@ -1,3 +1,4 @@
 *.sw*
 dist-newstyle/
 generated/*.log
+.tmp-arion-docker-compose*.yaml
