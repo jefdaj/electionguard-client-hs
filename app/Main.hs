@@ -1,4 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE DeriveGeneric #-}
 
 module Main where
 
@@ -9,10 +10,9 @@ import qualified Data.Text as T
 
 import Control.Monad (forM_)
 import Control.Monad.IO.Class (liftIO)
+import Data.Aeson (ToJSON, FromJSON, eitherDecode)
+import GHC.Generics (Generic)
 import System.Exit (ExitCode(..), exitWith)
-
--- TODO be more specific
-import Data.Aeson
 
 -----------------------------
 --- parse test-config.json --
@@ -24,14 +24,14 @@ data TestConfig = TestConfig
   , nMediators :: Int
   , guardianStartPort :: Int
   , mediatorStartPort :: Int
-  } deriving (Show, Generic)
+  } deriving (Read, Show, Generic)
 
 -- TODO do these still have to be standalone?
 instance FromJSON TestConfig
 instance ToJSON   TestConfig
 
 loadTestConfig :: FilePath -> IO (Either String TestConfig)
-loadTestConfig path = B.readFile path >>= eitherDecode
+loadTestConfig path = eitherDecode <$> B.readFile path
 
 type Port = Int
 type ApiConfig = Configuration AnonymousSecurityScheme
