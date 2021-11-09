@@ -15,6 +15,9 @@ By default there are 3 guardians accessible on ports 8101-8103,
 and 2 mediators accessible on ports 8201-8202:
 
 ```
+$ docker pull electionguard/electionguard-web-api:latest
+....
+
 $ arion up -d
 /nix/store/ykl19ajxg64igr7gs156vj3v0dz9ijff-docker-compose.yaml
 Creating network "electionguard-client-hs_default" with the default driver
