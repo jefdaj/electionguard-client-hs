@@ -19,18 +19,21 @@ let
 
   };
 
+  # make one vm entry, suitable for merging into the main services attrset
   mkApiVmAttrs = mode: startPort: n: {
     name = mode + builtins.toString n;
     value = mkApiVm mode (startPort + n);
   };
 
-  # the start ports are arbitrary
-  mkGuardians = nGuardians: map (mkApiVmAttrs "guardian" 8100) (nixpkgs.lib.range 1 nGuardians);
-  mkMediators = nMediators: map (mkApiVmAttrs "mediator" 8200) (nixpkgs.lib.range 1 nMediators);
+  # make a list of vm entries with the same mode, suitable for merging into the main services attrset
+  mkApiVmAttrList = mode: startPort: nVms: map (mkApiVmAttrs mode startPort) (nixpkgs.lib.range 1 nVms);
 
+  # make the entire services attrset
+  # the start ports are arbitrary but should match the haskell code
+  # TODO load both from a common test config file
   mkServices = nGuardians: nMediators:
-    builtins.listToAttrs (mkGuardians nGuardians) //
-    builtins.listToAttrs (mkMediators nMediators);
+    builtins.listToAttrs (mkApiVmAttrList "guardian" 8100 nGuardians) //
+    builtins.listToAttrs (mkApiVmAttrList "mediator" 8200 nMediators);
 
 in {
   # TODO get n guardians + mediators from somewhere?
