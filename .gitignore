@@ -2,3 +2,4 @@
 dist-newstyle/
 generated/*.log
 .stack-work/
+.tmp-arion-docker-compose*.yaml
