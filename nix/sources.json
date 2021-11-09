@@ -59,6 +59,18 @@
         "url": "https://github.com/input-output-hk/nix-tools/archive/c9c10ab889a7b7f2f5f4bb71e8786fc01d49e53e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "nixpkgs": {
+        "branch": "release-21.05",
+        "description": "Nix Packages collection",
+        "homepage": "",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "6382f887982727318eba9a6b9acdf46f55b02404",
+        "sha256": "0ihbm5knvnpgjg95xdmxvr1r51knsdbzpcx41ixwkl0090ab1lx6",
+        "type": "tarball",
+        "url": "https://github.com/nixos/nixpkgs/archive/6382f887982727318eba9a6b9acdf46f55b02404.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "stackage.nix": {
         "branch": "master",
         "description": "Automatically generated Nix expressions of Stackage snapshots",
