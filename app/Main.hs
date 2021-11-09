@@ -3,10 +3,12 @@
 module Main where
 
 import ElectionGuard.API
+
+import qualified Data.ByteString.Lazy as B
+import qualified Data.Text as T
+
 import Control.Monad (forM_)
 import Control.Monad.IO.Class (liftIO)
-import qualified Data.Text as T
-import qualified Data.ByteString.Lazy as B
 import System.Exit (ExitCode(..), exitWith)
 
 -- TODO be more specific
@@ -49,6 +51,11 @@ pingLocalApiContainer mode port = runElectionT (localHostApiConfig port) $ do
     Left  e -> putStrLn ("FAIL: " ++ show e) >> exitWith (ExitFailure 1)
     Right _ -> putStrLn "ok"
 
+pingLocalContainers :: ([Port], [Port]) -> IO ()
+pingLocalContainers (guardianPorts, mediatorPorts) = do
+  forM_ guardianPorts $ pingLocalApiContainer "guardian"
+  forM_ mediatorPorts $ pingLocalApiContainer "mediator"
+
 main :: IO ()
 main = do
   eCfg <- loadTestConfig "test-config.json"
@@ -57,6 +64,5 @@ main = do
     Right cfg -> do
       let guardianPorts = map (guardianStartPort cfg +) [1 .. nGuardians cfg]
           mediatorPorts = map (mediatorStartPort cfg +) [1 .. nMediators cfg]
-      forM_ guardianPorts $ pingLocalApiContainer "guardian"
-      forM_ mediatorPorts $ pingLocalApiContainer "mediator"
+      pingLocalContainers (guardianPorts, mediatorPorts)
       exitWith ExitSuccess
