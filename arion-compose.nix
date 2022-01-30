@@ -9,8 +9,7 @@ let
 
   mkApiVm = mode: port: {
 
-    # service.image = "electionguard/electionguard-web-api:latest";
-    service.image = "3fd0caa0edcb"; # TODO is this how you pin docker images?
+    service.image = "electionguard/electionguard-web-api:latest";
 
     service.environment.API_MODE = mode;
 
